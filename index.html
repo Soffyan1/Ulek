@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ulek™ Artisanal Archipelago Sambal | Reserve Line (Rp100k) &amp; 1987 Classic (Rp25k)</title>
+  <meta name="description" content="Founded as a warung in Sidoarjo in 1987 and now run by the 3rd generation. Explore the ULEK Archipelago Reserve Line (Matah, Roa, Bajak, Andaliman Rp100.000) alongside our unchanged 1987 Original (Rp25.000).">
+
+  <!-- Google Fonts: Plus Jakarta Sans (All Weights 300 to 800 + Italics) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Official 2026 ULEK Favicon -->
+  <link rel="icon" type="image/png" href="./assets/ulek-logo-mark.png">
+  <link rel="apple-touch-icon" href="./assets/ulek-logo-mark.png">
+
+  <!-- Preload LCP Hero Botanical Media -->
+  <link rel="preload" as="image" href="./assets/kora-hero-sambal-flora.png" fetchpriority="high">
+
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-track" aria-hidden="true">
+    <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ========================================================================
+       KORA STICKY FLOATING HEADER (Top-Left Notch Dock + Top-Right Book/Bag Pill)
+       ======================================================================== -->
+  <header id="main-header" class="kora-sticky-nav" role="banner">
+    <!-- Left Dock sitting inside the Hero's top-left sculpted ivory notch -->
+    <div class="kora-nav-dock">
+      <a href="#top" id="nav-logo-home" class="kora-brand-link" aria-label="ULEK Sidoarjo 1987 Return to Homepage">
+        <span class="kora-brand-mark" aria-hidden="true" title="ULEK Artisanal Volcanic Cobek & Sambal">
+          <img src="./assets/ulek-logo-mark.png" alt="" class="kora-brand-logo-img" width="32" height="26">
+        </span>
+        <span>ulek<sup class="kora-brand-tm">™</sup></span>
+      </a>
+
+      <nav class="kora-nav-links" aria-label="Primary Navigation">
+        <a href="#collection-section" class="kora-nav-item" data-home-scroll="#collection-section">Sambal Lineup</a>
+        <a href="#craft-section" class="kora-nav-item" data-home-scroll="#craft-section">How We Craft</a>
+        <a href="#gifting-section" class="kora-nav-item" data-home-scroll="#gifting-section">Gift Box</a>
+        <button type="button" class="kora-nav-item kora-nav-item--heritage" data-open-pdp="classic-1987" style="background:none; border:none; cursor:pointer;">1987 Classic · Rp25k</button>
+      </nav>
+    </div>
+
+    <!-- Top-Right Action Cluster (Kora Dark Avatar Pill) -->
+    <div class="kora-top-right-cluster">
+      <button type="button" id="open-cart-btn" class="kora-book-pill" aria-label="Open Pantry Bag Drawer">
+        <span>Pantry Bag</span>
+        <span class="kora-book-pill-line" aria-hidden="true"></span>
+        <span class="kora-book-avatar-wrap">
+          <img class="kora-book-avatar" src="./assets/jar-matah.png" alt="" width="36" height="36">
+          <span id="cart-count-badge" class="kora-cart-count-dot tabular-nums">2</span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN SHELL (Contains Deliverables #1 Homepage & #2 Product Detail Page)
+       ======================================================================== -->
+  <div id="top" class="page-shell">
+
+    <!-- ======================================================================
+         DELIVERABLE 01: HOMEPAGE VIEW (Kora Framer Architecture)
+         ====================================================================== -->
+    <main id="view-homepage" class="homepage-view-container">
+
+      <!-- ====================================================================
+           SECTION 1: KORA HERO SCROLL STAGE & FULL-BLEED MANIFESTO SCROLLYTELLING
+           - Scroll Phase 1: Content scrolls out while background stays stuck
+           - Scroll Phase 2: 24px padding collapses to 0px (100% full bleed)
+           - Scroll Phase 3: Manifesto appears word-by-word on scroll down / up
+           ==================================================================== -->
+      <div id="hero-scroll-stage" class="hero-scroll-stage">
+        <div class="hero-sticky-track">
+          <section id="hero-section" class="kora-hero-frame" aria-labelledby="hero-display-heading">
+            <!-- Backlit Macro Botanical Sambal Photography -->
+            <img
+              src="./assets/kora-hero-sambal-flora.png"
+              alt="Backlit red chilies, shallots, kaffir lime leaves, and glowing chili oil against a deep slate teal canvas"
+              class="kora-hero-bg-media"
+              width="1600"
+              height="900"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
+            >
+            <div class="kora-hero-overlay" aria-hidden="true"></div>
+
+            <!-- Center-Left Editorial Display Headline & Dual CTAs -->
+            <div class="kora-hero-main-content">
+              <div class="kora-hero-badge">
+                <span class="kora-dot" style="background:var(--kora-green);"></span>
+                <span>Sidoarjo Warung Est. 1987 · 3rd Generation Launch</span>
+              </div>
+
+              <h1 id="hero-display-heading" class="kora-hero-title">
+                Archipelago sambal crafted for tables ready to savor.
+              </h1>
+
+              <p class="kora-hero-subtitle">
+                Four single origin reserve jars (<strong class="tabular-nums" style="color:#FFFFFA;">Rp100.000</strong>) stone ground on volcanic basalt for urban food gifting and the nice pantry alongside our unchanged <strong class="tabular-nums" style="color:#FFFFFA;">Rp25.000</strong> Sidoarjo warung original.
+              </p>
+
+              <div class="kora-hero-cta-row">
+                <a href="#collection-section" class="kora-btn-green">
+                  <span>Explore Reserve Line</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Bottom Row: Left Stacked Avatars & Grocers + Right Floating Ivory Spotlight Card -->
+            <div class="kora-hero-bottom-row">
+              <!-- Bottom-Left Social Proof & Specialty Grocers -->
+              <div class="kora-hero-proof-left">
+                <div class="kora-avatar-rating-row">
+                  <div class="kora-stacked-avatars" aria-hidden="true">
+                    <img class="kora-mini-avatar" src="./assets/jar-matah.png" alt="" width="34" height="34">
+                    <img class="kora-mini-avatar" src="./assets/jar-roa.png" alt="" width="34" height="34">
+                    <img class="kora-mini-avatar" src="./assets/jar-bajak.png" alt="" width="34" height="34">
+                    <img class="kora-mini-avatar" src="./assets/jar-andaliman.png" alt="" width="34" height="34">
+                    <img class="kora-mini-avatar" src="./assets/jar-classic-1987.png" alt="" width="34" height="34">
+                  </div>
+                  <div class="kora-stars-line">
+                    <span class="kora-stars-dots" aria-label="5 out of 5 stars">★★★★★</span>
+                    <span class="kora-trusted-label">Crafted for tables since 1987 · Trusted by East Java's culinary legends</span>
+                  </div>
+                </div>
+
+                <div class="hero-partner-marquee-wrap" aria-label="East Java Legendary Restaurant Partners">
+                  <div class="hero-partner-marquee-track">
+                    <!-- Set 1 (6 Authentic East Java Legends) -->
+                    <div class="hero-partner-logo-item" title="Warung Bu Kris Spesialis Sambal &amp; Penyet Jawa Timur">
+                      <img src="./assets/logos/logo-bu-kris.svg" alt="Warung Bu Kris" class="hero-partner-svg-logo" width="165" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" title="Bebek Sinjay Legenda Bebek Goreng Jawa Timur">
+                      <img src="./assets/logos/logo-bebek-sinjay.svg" alt="Bebek Sinjay" class="hero-partner-svg-logo" width="160" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" title="Rawon Setan Ikon Rawon Surabaya sejak 1952">
+                      <img src="./assets/logos/logo-rawon-setan.svg" alt="Rawon Setan" class="hero-partner-svg-logo" width="160" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" title="Soto Ambengan Pak Sadi Kuliner Legendaris Surabaya sejak 1971">
+                      <img src="./assets/logos/logo-soto-ambengan.svg" alt="Soto Ambengan Pak Sadi" class="hero-partner-svg-logo" width="170" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" title="Warung Leko Spesialis Iga Penyet Cobek Jawa Timur">
+                      <img src="./assets/logos/logo-warung-leko.svg" alt="Warung Leko" class="hero-partner-svg-logo" width="155" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" title="Layar Seafood Restoran Seafood &amp; Ikan Bakar Surabaya sejak 1999">
+                      <img src="./assets/logos/logo-layar-seafood.svg" alt="Layar Seafood" class="hero-partner-svg-logo" width="160" height="36" loading="lazy">
+                    </div>
+
+                    <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+                    <div class="hero-partner-logo-item" aria-hidden="true">
+                      <img src="./assets/logos/logo-bu-kris.svg" alt="" class="hero-partner-svg-logo" width="165" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" aria-hidden="true">
+                      <img src="./assets/logos/logo-bebek-sinjay.svg" alt="" class="hero-partner-svg-logo" width="160" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" aria-hidden="true">
+                      <img src="./assets/logos/logo-rawon-setan.svg" alt="" class="hero-partner-svg-logo" width="160" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" aria-hidden="true">
+                      <img src="./assets/logos/logo-soto-ambengan.svg" alt="" class="hero-partner-svg-logo" width="170" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" aria-hidden="true">
+                      <img src="./assets/logos/logo-warung-leko.svg" alt="" class="hero-partner-svg-logo" width="155" height="36" loading="lazy">
+                    </div>
+                    <div class="hero-partner-logo-item" aria-hidden="true">
+                      <img src="./assets/logos/logo-layar-seafood.svg" alt="" class="hero-partner-svg-logo" width="160" height="36" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom-Right Floating Ivory Spotlight Card (Interactive 01 to 04 Jar Switcher) -->
+              <aside id="hero-spotlight-card" class="kora-floating-spotlight-card" aria-label="Featured Reserve Jar Spotlight">
+                <div class="kora-spotlight-media">
+                  <img
+                    id="hero-spotlight-img"
+                    src="./assets/jar-matah.png"
+                    alt="ULEK Matah Bali Reserve Jar"
+                    class="kora-spotlight-img"
+                    width="280"
+                    height="320"
+                  >
+                  <span id="hero-spotlight-origin" class="kora-spotlight-overlay-label">ulek™ · Bali</span>
+                </div>
+
+                <div class="kora-spotlight-body">
+                  <div class="kora-spotlight-top-row">
+                    <span id="hero-spotlight-badge" class="kora-dark-badge">Reserve 01 · Rp100k</span>
+                    <div id="hero-spotlight-dots" class="kora-mini-switcher-dots" role="tablist" aria-label="Select Reserve Jar 01 to 04">
+                      <!-- Populated by app.js -->
+                    </div>
+                  </div>
+
+                  <p id="hero-spotlight-headline" class="kora-spotlight-headline">
+                    Matah (Bali) Raw Karangasem shallots, lemongrass &amp; first press coconut oil.
+                  </p>
+
+                  <div class="kora-spotlight-bottom">
+                    <div class="kora-spotlight-metric-wrap">
+                      <span id="hero-spotlight-heat" class="kora-spotlight-big-stat tabular-nums">2/5</span>
+                      <span id="hero-spotlight-stat-sub" class="kora-spotlight-stat-label">Heat Index<br>With grilled fish</span>
+                    </div>
+
+                    <div style="display:flex; gap:6px;">
+                      <button type="button" id="hero-spotlight-bag-btn" class="kora-circle-arrow-btn" title="Add jar to Pantry Bag" aria-label="Add featured jar to Pantry Bag">+</button>
+                      <button type="button" id="hero-spotlight-pdp-btn" class="kora-circle-arrow-btn" title="Open Product Detail Page" aria-label="Inspect featured jar Product Detail Page">↗</button>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+
+            <!-- Full-Bleed Manifesto Word-by-Word Scrollytelling Overlay (Appears when hero padding collapses) -->
+            <div id="hero-manifesto-stage" class="hero-manifesto-stage" aria-label="ULEK Quality Manifesto">
+              <div class="hero-manifesto-inner">
+                <h2 class="hero-manifesto-statement" id="manifesto-scrolly-text">
+                  <span class="manifesto-word" data-word-idx="0">Most</span>
+                  <span class="manifesto-word" data-word-idx="1">supermarket</span>
+                  <span class="manifesto-word" data-word-idx="2">chili</span>
+                  <span class="manifesto-word" data-word-idx="3">jars</span>
+                  <span class="manifesto-word" data-word-idx="4">lose</span>
+                  <span class="manifesto-word" data-word-idx="5">their</span>
+                  <span class="manifesto-word" data-word-idx="6">soul</span>
+                  <span class="manifesto-word" data-word-idx="7">because</span>
+                  <span class="manifesto-word" data-word-idx="8">industrial</span>
+                  <span class="manifesto-word" data-word-idx="9">blades</span>
+                  <span class="manifesto-word" data-word-idx="10">boil</span>
+                  <span class="manifesto-word" data-word-idx="11">and</span>
+                  <span class="manifesto-word" data-word-idx="12">puree</span>
+                  <span class="manifesto-word" data-word-idx="13">chilies</span>
+                  <span class="manifesto-word" data-word-idx="14">with</span>
+                  <span class="manifesto-word" data-word-idx="15">water,</span>
+                  <span class="manifesto-word" data-word-idx="16">modified</span>
+                  <span class="manifesto-word" data-word-idx="17">starch</span>
+                  <span class="manifesto-word" data-word-idx="18">fillers,</span>
+                  <span class="manifesto-word" data-word-idx="19">and</span>
+                  <span class="manifesto-word" data-word-idx="20">refined</span>
+                  <span class="manifesto-word" data-word-idx="21">seed</span>
+                  <span class="manifesto-word" data-word-idx="22">oil.</span>
+                </h2>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           SECTION 2: KORA SERVICES / THE RESERVE LINE (Rp100.000 A JAR)
+           (Sticky Intro + Sticky Overlapping Card Stack)
+           (Matches user screen recording 00:00 to 00:07 1:1)
+           ==================================================================== -->
+      <section id="collection-section" class="kora-section kora-services-scroll-section" aria-labelledby="collection-heading">
+        <!-- Sticky Intro Header (Title & Subtitle Only with Smooth Scroll Reveal) -->
+        <div id="kora-services-sticky-intro" class="kora-services-sticky-intro">
+          <div class="kora-services-intro-text">
+            <h2 id="collection-heading" class="kora-services-big-title" aria-label="The Sambal Lineup.">
+              <span class="split-word"><span class="split-char" style="--char-index:0;">T</span><span class="split-char" style="--char-index:1;">h</span><span class="split-char" style="--char-index:2;">e</span></span>
+              <span class="split-space">&nbsp;</span>
+              <span class="split-word"><span class="split-char" style="--char-index:3;">S</span><span class="split-char" style="--char-index:4;">a</span><span class="split-char" style="--char-index:5;">m</span><span class="split-char" style="--char-index:6;">b</span><span class="split-char" style="--char-index:7;">a</span><span class="split-char" style="--char-index:8;">l</span></span>
+              <span class="split-space">&nbsp;</span>
+              <span class="split-word"><span class="split-char" style="--char-index:9;">L</span><span class="split-char" style="--char-index:10;">i</span><span class="split-char" style="--char-index:11;">n</span><span class="split-char" style="--char-index:12;">e</span><span class="split-char" style="--char-index:13;">u</span><span class="split-char" style="--char-index:14;">p</span><span class="split-char" style="--char-index:15;">.</span></span>
+            </h2>
+            <p class="kora-services-lead-copy">
+              Across four single origin archipelago harvests, ULEK Reserve packs an
+              <span class="kora-lead-highlight">average 62% whole regional aromatics &amp; smoked fish</span>
+              into every Rp100.000 jar crafted on volcanic stone with zero water or starch fillers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sticky Overlapping Sambal Cards Stack (01 Matah -> 02 Roa -> 03 Bajak -> 04 Andaliman) -->
+        <div id="kora-service-cards-stack" class="kora-service-cards-stack">
+          <!-- Populated by app.js with .kora-sticky-card-slot items -->
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 4: KORA "HOW WE WORK" 4-PHASE HORIZONTAL ACCORDION
+           + SIDOARJO KITCHEN DOCUMENTARY BANNER
+           (Matches 06_kora_framer_sections_reference.jpg Left Column 1:1)
+           ==================================================================== -->
+      <section id="craft-section" class="kora-section" aria-labelledby="craft-heading">
+        <div id="craft-header-wrap" class="craft-header-wrap">
+          <h2 id="craft-heading" class="kora-two-tone-heading craft-heading-animated">
+            <span class="craft-title-lead">Never blended.</span>
+            <span class="muted-part craft-title-sub">Stone ground in four deliberate phases.</span>
+          </h2>
+        </div>
+
+        <!-- 4-Phase Horizontal Expanding Accordion -->
+        <div id="kora-process-accordion" class="kora-process-accordion" role="tablist" aria-label="Four Phases of ULEK Stone Grinding">
+          <!-- Populated by app.js from ULEK_DATA.craftPhases -->
+        </div>
+
+        <!-- Full-Width Documentary Kitchen Banner (Kora Video Card Equivalent) -->
+        <div class="kora-video-banner" id="kora-video-banner" role="region" aria-label="Sidoarjo Craft Documentary Video">
+          <img
+            src="./assets/kora-sidoarjo-kitchen.png"
+            alt="Two 3rd generation ULEK artisans stone grinding red chilies and shallots on volcanic basalt cobek in Sidoarjo"
+            class="kora-video-banner-img"
+            width="1600"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="kora-video-banner-overlay" aria-hidden="true"></div>
+
+          <!-- Top Bar: ULEK Logo with Black Gradient (Reveals on Hover) -->
+          <div class="video-banner-top-bar">
+            <div class="video-banner-logo-wrap">
+              <span class="video-banner-logo-mark" aria-hidden="true">
+                <img src="./assets/ulek-logo-mark-white.png" alt="ULEK" class="video-banner-logo-img" width="28" height="24">
+              </span>
+              <span class="video-banner-brand-text">ulek<sup class="video-banner-brand-tm">™</sup></span>
+            </div>
+          </div>
+
+          <!-- Center Play Button (Triggers YouTube Video Modal) -->
+          <button
+            type="button"
+            id="workshop-reel-btn"
+            class="kora-play-orb"
+            aria-label="Play documentary video: How we work"
+            data-video-url="https://youtu.be/8kGv0iVNlQg?si=AAbsA-b77BdlNWGr"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <polygon points="6 4 20 12 6 20 6 4"></polygon>
+            </svg>
+          </button>
+
+          <!-- Bottom Bar: Video Title with Black Gradient (Reveals on Hover) -->
+          <div class="video-banner-bottom-bar">
+            <h3 class="video-banner-title">
+              How we work Crushing cells, never shearing seeds, since 1987
+            </h3>
+          </div>
+
+          <!-- Direct Inline Video Player (Plays directly inside this card, zero popup) -->
+          <div class="video-banner-inline-player" id="video-banner-inline-player" aria-hidden="true">
+            <iframe
+              id="video-banner-inline-iframe"
+              class="video-banner-inline-iframe"
+              title="ULEK Sidoarjo Craft Documentary Video"
+              src=""
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <button
+              type="button"
+              class="video-banner-close-inline-btn"
+              id="video-banner-close-inline-btn"
+              aria-label="Tutup video dan kembali ke poster"
+              title="Tutup Video"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+              <span>Tutup Video</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           SECTION 6: FULL-BLEED PANTRY LIFESTYLE BANNER + KORA TIER / GIFT BOX
+           (Built for Urban Buyers Aged 25 to 40 Who Gift Food & Keep a Nice Pantry)
+           ==================================================================== -->
+      <section id="gifting-section" class="kora-section" aria-labelledby="gifting-heading">
+        <!-- Full-Bleed Pantry & Dining Table Banner -->
+        <div class="kora-featured-pantry-banner">
+          <img
+            src="./assets/kora-pantry-table.png"
+            alt="Warm Indonesian dinner table and nice pantry shelf featuring grilled fish, warm rice and egg, ULEK Reserve jar, and linen gift box"
+            class="kora-video-banner-img"
+            width="1600"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="kora-video-banner-overlay" style="background:linear-gradient(90deg, rgba(13,13,13,0.78) 0%, rgba(13,13,13,0.32) 55%, rgba(13,13,13,0.05) 100%);" aria-hidden="true"></div>
+
+          <!-- Vertical Slow Auto-Scrolling 5 Testimonial Cards Column -->
+          <div class="pantry-testimonials-column" aria-label="Customer & Curator Testimonials">
+            <div class="pantry-testimonials-viewport" id="pantry-testimonials-viewport" role="region" aria-label="Continuous Testimonials Feed">
+              <div class="pantry-testimonials-track" id="pantry-testimonials-track">
+                <!-- Dynamically populated by app.js from ULEK_DATA.testimonials -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redesigned Build Your Gift Box Header & Format Selector (The Sambal Lineup Mood) -->
+        <div class="gifting-header-wrap">
+          <h2 id="gifting-heading" class="kora-two-tone-heading" style="text-align:center; margin-bottom:14px;">
+            <span class="split-word">Designed</span>
+            <span class="split-space">&nbsp;</span>
+            <span class="split-word">to</span>
+            <span class="split-space">&nbsp;</span>
+            <span class="split-word">be</span>
+            <span class="split-space">&nbsp;</span>
+            <span class="split-word">gifted.</span>
+            <span class="split-space">&nbsp;</span>
+            <span class="muted-part">
+              <span class="split-word">Worthy</span>
+              <span class="split-space">&nbsp;</span>
+              <span class="split-word">of</span>
+              <span class="split-space">&nbsp;</span>
+              <span class="split-word">the</span>
+              <span class="split-space">&nbsp;</span>
+              <span class="split-word">nice</span>
+              <span class="split-space">&nbsp;</span>
+              <span class="split-word">pantry</span>
+              <span class="split-space">&nbsp;</span>
+              <span class="split-word">shelf.</span>
+            </span>
+          </h2>
+          <p class="kora-services-lead-copy" style="max-width:680px; margin-inline:auto; text-align:center; font-size:0.95rem; color:var(--kora-muted);">
+            Pilih format kurasi 4 jar linen gift box untuk hantaran istimewa, atau pilih jar satuan varian nusantara dan resep legendaris 1987 untuk kebutuhan dapur harian Anda.
+          </p>
+        </div>
+
+        <!-- 3 Simplified Value Format Cards -->
+        <div id="kora-tier-tabs" class="kora-format-cards-grid" role="tablist" aria-label="Select ULEK Purchasing Format">
+          <!-- Card 1: The 4 Jar Archipelago Gift Box -->
+          <div class="format-card is-active" data-tier="box" role="tab" aria-selected="true" tabindex="0">
+            <div class="format-card-header">
+              <h3 class="format-card-title">The 4 Jar Gift Box</h3>
+              <span class="format-badge-popular">Save Rp20.000</span>
+            </div>
+            <div class="format-price-cluster">
+              <span class="format-price tabular-nums">Rp380.000</span>
+              <span class="format-price-old tabular-nums">Rp400.000</span>
+            </div>
+            <p class="format-card-desc">Custom 4 slot tasting flight in textured cream linen box</p>
+          </div>
+
+          <!-- Card 2: Single Reserve Jar (185g) -->
+          <div class="format-card" data-tier="single" role="tab" aria-selected="false" tabindex="0">
+            <div class="format-card-header">
+              <h3 class="format-card-title">Single Reserve Jar</h3>
+              <span class="format-badge-subtle">185g Glass</span>
+            </div>
+            <div class="format-price-cluster">
+              <span class="format-price tabular-nums">Rp100.000</span>
+              <span class="format-price-unit">/ jar</span>
+            </div>
+            <p class="format-card-desc">Pilihan satuan: Matah, Roa, Bajak, atau Andaliman</p>
+          </div>
+
+          <!-- Card 3: 1987 Sidoarjo Original (150g) -->
+          <div class="format-card" data-tier="classic" role="tab" aria-selected="false" tabindex="0">
+            <div class="format-card-header">
+              <h3 class="format-card-title">1987 Sidoarjo Original</h3>
+              <span class="format-badge-heritage">Since 1987</span>
+            </div>
+            <div class="format-price-cluster">
+              <span class="format-price tabular-nums">Rp25.000</span>
+              <span class="format-price-unit">/ jar</span>
+            </div>
+            <p class="format-card-desc">Resep ulekan batu andesit asli warung sejak 1987</p>
+          </div>
+        </div>
+
+        <!-- Dynamic Order Stage Container (Controlled by app.js) -->
+        <div id="gifting-stage-container">
+          <!-- Stage 1 (Default): 4 Jar Linen Gift Box Builder -->
+          <div id="gifting-stage-box" class="kora-giftbox-stage">
+            <!-- Left Column: White Panel (Slot Grid + Dietary Presets) -->
+            <div class="kora-giftbox-white-panel">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                <div>
+                  <h3 style="font-family:var(--font-display); font-size:1.45rem; font-weight:700; letter-spacing:-0.02em; color:var(--kora-ink); margin:0;">
+                    Customize Your 4 Jar Linen Box
+                  </h3>
+                  <p style="font-size:0.84rem; color:var(--kora-muted); margin-top:4px; margin-bottom:0;">
+                    Klik slot jar di bawah untuk mengganti varian sambal, atau pilih racikan preset cepat:
+                  </p>
+                </div>
+              </div>
+
+              <!-- Quick Dietary Presets -->
+              <div class="gift-preset-bar" role="group" aria-label="Gift Box Dietary Presets">
+                <button type="button" class="gift-preset-btn is-active" data-box-preset="all-islands">
+                  <span>All 4 Islands Tasting Flight</span>
+                </button>
+                <button type="button" class="gift-preset-btn" data-box-preset="plant-based">
+                  <span>100% Plant Based (2 Matah + 2 Andaliman)</span>
+                </button>
+                <button type="button" class="gift-preset-btn" data-box-preset="mild-host">
+                  <span>Mild Table Host (2 Matah + 2 Bajak)</span>
+                </button>
+                <button type="button" class="gift-preset-btn" data-box-preset="high-heat">
+                  <span>High Voltage (2 Roa + 2 Andaliman)</span>
+                </button>
+              </div>
+
+              <!-- 4 Interactive Jar Slots Grid -->
+              <div id="gift-slots-grid" class="gift-slots-grid" aria-live="polite">
+                <!-- Dynamically Populated by renderGiftBoxBuilder in app.js -->
+              </div>
+
+              <!-- Dietary Summary Breakdown -->
+              <div class="gift-dietary-summary-bar">
+                <span id="gift-box-dietary-summary">Includes: 2 Plant Based jars · 2 Smoked Fish / Terasi jars · All 4 Halal friendly</span>
+                <span class="tabular-nums" style="font-weight:700; color:var(--kora-ink);">📦 Ships in Textured Cream Linen Box</span>
+              </div>
+            </div>
+
+            <!-- Right Column: White Panel (Box Summary, Gift Note, & Checkout Action) -->
+            <div class="kora-giftbox-white-panel">
+              <div class="gift-summary-header">
+                <div>
+                  <span style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--kora-muted); font-weight:700;">
+                    ARCHIPELAGO TASTING FLIGHT
+                  </span>
+                  <h4 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--kora-ink); margin:2px 0 0;">
+                    4 Jar Pantry Gift Box
+                  </h4>
+                </div>
+                <div style="text-align:right;">
+                  <div class="tabular-nums" style="font-family:var(--font-display); font-size:1.55rem; font-weight:800; color:var(--kora-ink);">
+                    Rp380.000
+                  </div>
+                  <div class="tabular-nums" style="font-size:0.75rem; color:var(--kora-muted); text-decoration:line-through;">
+                    Rp400.000
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Box Composition Preview -->
+              <div class="gift-summary-box-preview">
+                <div style="font-family:var(--font-mono); font-size:0.68rem; font-weight:700; color:var(--kora-muted); text-transform:uppercase; letter-spacing:0.04em;">
+                  Box Contents (4 Selected Jars)
+                </div>
+                <div id="gift-summary-jars-list" style="display:flex; flex-direction:column; gap:6px;">
+                  <!-- Populated by app.js -->
+                </div>
+              </div>
+
+              <!-- Complimentary Gift Note Card -->
+              <div class="gift-note-card">
+                <label for="gift-note-input" class="gift-note-label">
+                  <span>Kartu Ucapan Linen Eksklusif (Gratis / Opsional)</span>
+                  <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--kora-muted);">Maks. 90 karakter</span>
+                </label>
+                <input
+                  type="text"
+                  id="gift-note-input"
+                  class="gift-note-input"
+                  maxlength="90"
+                  placeholder="e.g. Selamat menikmati sajian hangat nusantara dari dapur kami!"
+                >
+              </div>
+
+              <!-- Dietary Guide Card Checkbox -->
+              <label class="gift-guide-checkbox">
+                <input type="checkbox" id="gift-dietary-card-check" checked>
+                <span>Sertakan printed <strong>Archipelago Pairing &amp; Dietary Guide Card</strong> (memudahkan penerima mengetahui jar Plant Based, Seafood, dan Halal).</span>
+              </label>
+
+              <!-- Trust Guarantee Chips -->
+              <div class="gift-trust-badges">
+                <div class="gift-trust-item">
+                  <span class="gift-trust-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span class="gift-trust-text">Gratis Ongkir Instant Jabodetabek</span>
+                </div>
+                <div class="gift-trust-item">
+                  <span class="gift-trust-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span class="gift-trust-text">Garansi Pecah Ganti Baru 100%</span>
+                </div>
+                <div class="gift-trust-item">
+                  <span class="gift-trust-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span class="gift-trust-text">Kemasan Insulasi Dingin Termal</span>
+                </div>
+                <div class="gift-trust-item">
+                  <span class="gift-trust-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span class="gift-trust-text">100% Bahan Alami Tanpa Pengawet</span>
+                </div>
+              </div>
+
+              <!-- Primary Add & Checkout CTA Button -->
+              <button type="button" id="add-gift-box-btn" class="kora-btn-green" style="width:100%; justify-content:center; padding-block:16px; font-size:0.96rem;">
+                <span>Add Custom 4 Jar Gift Box · Rp380.000</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Stage 2: Single Reserve Jars Quick Order Grid (Initially Hidden) -->
+          <div id="gifting-stage-single" class="gift-single-stage" style="display:none;">
+            <!-- Populated by renderSingleJarsStage in app.js -->
+          </div>
+
+          <!-- Stage 3: 1987 Sidoarjo Original Quick Order Card (Initially Hidden) -->
+          <div id="gifting-stage-classic" class="gift-classic-stage" style="display:none;">
+            <!-- Populated by renderClassicStage in app.js -->
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           SECTION 7: KORA AESTHETIC FAQ (Exact Reference Image Alignment)
+           ==================================================================== -->
+      <section id="faq-section" class="kora-section" aria-labelledby="faq-heading">
+        <!-- Giant Centered FAQ Title (Matches Reference Image 1:1) -->
+        <div class="kora-faq-header-wrap">
+          <h2 id="faq-heading" class="kora-faq-giant-title">
+            <span class="split-word">FAQ</span>
+          </h2>
+        </div>
+
+        <!-- Centered Main Cream FAQ Card -->
+        <div class="kora-faq-main-card">
+          <!-- Category Pills Row (Centered at Top) -->
+          <div id="kora-faq-cats" class="kora-faq-pills-bar" role="tablist" aria-label="FAQ Categories">
+            <!-- Populated by app.js -->
+          </div>
+
+          <!-- White Accordion Items Stack -->
+          <div id="kora-faq-list" class="kora-faq-accordion-stack" aria-live="polite">
+            <!-- Populated by app.js with + / - interactive expansion -->
+          </div>
+        </div>
+
+        <!-- Bottom Contact Card with 3 Overlapping Avatars (Matches Reference Image) -->
+        <div class="kora-faq-contact-card">
+          <div class="kora-faq-avatars-cluster">
+            <img src="./assets/avatar-nadia.jpg" alt="Nadia Kusuma" class="faq-team-avatar" width="48" height="48">
+            <img src="./assets/avatar-arga.jpg" alt="Chef Arga" class="faq-team-avatar" width="48" height="48">
+            <img src="./assets/avatar-daniel.jpg" alt="Daniel Sihombing" class="faq-team-avatar" width="48" height="48">
+          </div>
+          <div class="kora-faq-contact-info">
+            <span class="faq-contact-sub">More questions? Reach out anytime.</span>
+            <a href="mailto:support@ulek.id" class="faq-contact-link">
+              <span class="faq-contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <span>support@ulek.id</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specialty Grocers & Stockists -->
+      <section id="stockists-section" class="kora-section" aria-labelledby="stockists-heading">
+        <div class="stockists-header-wrap">
+          <h2 id="stockists-heading" class="stockists-big-title">
+            <span class="kora-hover-word">Find</span>
+            <span class="kora-hover-word">ULEK</span>
+            <span class="kora-hover-word">Reserve</span>
+            <span class="muted-part">
+              <span class="kora-hover-word">in</span>
+              <span class="kora-hover-word">specialty</span>
+              <span class="kora-hover-word">grocers.</span>
+            </span>
+          </h2>
+          <p class="stockists-subtitle">
+            Available nationwide with same day dispatch in Jabodetabek, Surabaya &amp; Bali,<br>
+            or on the fine food aisle at our partner specialty grocers.
+          </p>
+        </div>
+
+        <div id="stockists-grid" class="stockists-grid-3" role="region" aria-label="Partner Stockist Locations">
+          <!-- Populated by app.js from ULEK_DATA.stockists -->
+        </div>
+      </section>
+
+      <!-- Section Footer -->
+      <section id="footer-section" class="kora-footer-section">
+        <footer class="kora-footer" role="contentinfo">
+          <div class="kora-footer-top">
+            <div style="display:flex; flex-direction:column; justify-content:space-between; gap:24px;">
+              <div>
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+                  <img src="./assets/ulek-logo-mark-white.png" alt="ULEK" width="46" height="36" style="height:36px; width:auto; object-fit:contain;">
+                  <span style="font-family:var(--font-display); font-size:1.6rem; font-weight:800; letter-spacing:-0.03em; color:#FFFFFA;">ulek<sup class="kora-brand-tm" style="color:var(--ulek-red-orange); font-size:0.7rem;">™</sup></span>
+                </div>
+                <span class="kora-dark-badge" style="background:rgba(255,255,255,0.12); margin-bottom:14px;">
+                  Sidoarjo Warung Est. 1987 · 3rd Generation
+                </span>
+                <h2 style="font-family:var(--font-display); font-size:clamp(1.85rem, 3.2vw, 2.75rem); font-weight:500; letter-spacing:-0.03em; line-height:1.1; max-width:22ch;">
+                  Ready to stock your pantry or curate a corporate gift order?
+                </h2>
+              </div>
+
+              <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+                <button type="button" id="copy-email-btn" class="kora-btn-green" data-email="hello@uleksidoarjo.id">
+                  <span id="copy-email-label">Copy Email: hello@uleksidoarjo.id</span>
+                </button>
+
+                <button type="button" id="footer-case-study-btn" class="kora-btn-cream" style="background:rgba(255,255,255,0.1); color:#FFFFFA; border-color:rgba(255,255,255,0.2);">
+                  <span>Open Antikode Case Study Deck</span>
+                </button>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; font-size:0.86rem;">
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <span style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; color:rgba(255,255,255,0.5);">Reserve Line · Rp100k</span>
+                <button type="button" class="kora-nav-item" style="color:#FFFFFA; text-align:left;" data-open-pdp="matah">01 · Matah (Bali · 2/5)</button>
+                <button type="button" class="kora-nav-item" style="color:#FFFFFA; text-align:left;" data-open-pdp="roa">02 · Roa (Manado · 3/5)</button>
+                <button type="button" class="kora-nav-item" style="color:#FFFFFA; text-align:left;" data-open-pdp="bajak">03 · Bajak (Jawa · 2/5)</button>
+                <button type="button" class="kora-nav-item" style="color:#FFFFFA; text-align:left;" data-open-pdp="andaliman">04 · Andaliman (Batak · 4/5)</button>
+              </div>
+
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <span style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; color:rgba(255,255,255,0.5);">1987 Classic · Rp25k</span>
+                <button type="button" class="kora-nav-item" style="color:var(--kora-green); text-align:left;" data-open-pdp="classic-1987">1987 Warung Original</button>
+                <a href="#gifting-section" class="kora-nav-item" style="color:rgba(255,255,255,0.78);" data-home-scroll="#gifting-section">4 Jar Linen Gift Box</a>
+                <a href="#stockists-section" class="kora-nav-item" style="color:rgba(255,255,255,0.78);" data-home-scroll="#stockists-section">Specialty Grocers</a>
+              </div>
+
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <span style="font-family:var(--font-mono); font-size:0.7rem; text-transform:uppercase; color:rgba(255,255,255,0.5);">Skill Test Deliverables</span>
+                <a href="#top" class="kora-nav-item" style="color:rgba(255,255,255,0.78);" data-home-scroll="#top">Deliverable 01: Homepage</a>
+                <button type="button" class="kora-nav-item" style="color:rgba(255,255,255,0.78); text-align:left;" data-open-pdp="matah">Deliverable 02: PDP</button>
+                <button type="button" id="footer-case-study-link" class="kora-nav-item" style="color:var(--kora-green); text-align:left;">Brief C Reasoning Deck</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; padding-top:20px; font-size:0.78rem; color:rgba(255,255,255,0.55); flex-wrap:wrap; gap:10px;">
+            <span>© 1987 2026 ULEK Sidoarjo · Crafted for Antikode Designer Skill Test (Brief C)</span>
+          </div>
+
+          <div class="kora-footer-watermark" aria-hidden="true">ulek</div>
+        </footer>
+      </section>
+    </main>
+
+    <!-- ======================================================================
+         DELIVERABLE 02: PRODUCT DETAIL PAGE (PDP) VIEW
+         (Instant Multi-SKU Switcher for All 4 Reserve Jars + 1987 Classic)
+         ====================================================================== -->
+    <section id="view-pdp" class="pdp-view-container" aria-live="polite" aria-label="Product Detail Page">
+      <!-- Dynamically rendered by renderPdpView() in js/app.js -->
+    </section>
+
+  </div>
+
+  <!-- ========================================================================
+       SLIDE-OVER PANTRY BAG DRAWER (<dialog closedby="any">)
+       ======================================================================== -->
+  <dialog id="cart-drawer" class="ulek-drawer" closedby="any" aria-labelledby="cart-drawer-title">
+    <div class="drawer-inner">
+      <div class="drawer-header">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img src="./assets/ulek-logo-mark.png" alt="ULEK" width="32" height="25" style="height:25px; width:auto; object-fit:contain;">
+          <div>
+            <span style="font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; color:var(--kora-muted);">ULEK PANTRY &amp; GIFT BAG</span>
+            <h2 id="cart-drawer-title" style="font-family:var(--font-display); font-size:1.35rem; font-weight:600;">Your Pantry Selection</h2>
+          </div>
+        </div>
+        <button type="button" id="close-cart-btn" class="kora-circle-arrow-btn" aria-label="Close Pantry Bag">✕</button>
+      </div>
+
+      <!-- Free Gift Box / Shipping Progress Bar -->
+      <div style="background:var(--kora-cream-card); border:1px solid var(--kora-border); border-radius:14px; padding:12px 14px; margin-top:12px;">
+        <div style="display:flex; justify-content:space-between; font-size:0.78rem; font-weight:600; margin-bottom:6px;">
+          <span id="cart-shipping-msg">Add Rp175.000 more for complimentary courier delivery</span>
+          <span id="cart-shipping-pct" class="tabular-nums">42%</span>
+        </div>
+        <div style="height:6px; border-radius:999px; background:rgba(13,13,13,0.08); overflow:hidden;">
+          <div id="cart-shipping-bar" style="height:100%; width:42%; background:var(--kora-green); transition:width 260ms ease;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List -->
+      <div id="cart-items-container" class="drawer-items-list">
+        <!-- Populated by app.js -->
+      </div>
+
+      <!-- Upsell 1987 Warung Classic Rp25k inside Drawer -->
+      <div id="cart-classic-upsell" style="background:var(--kora-cream-card); border:1px dashed var(--kora-border-strong); border-radius:14px; padding:10px 12px; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <img src="./assets/jar-classic-1987.png" alt="" width="40" height="40" style="width:40px; height:40px; border-radius:8px; object-fit:cover;">
+          <div>
+            <div style="font-family:var(--font-display); font-size:0.8rem; font-weight:600;">Add 1987 Original Jar?</div>
+            <div class="tabular-nums" style="font-size:0.72rem; color:var(--kora-muted);">Everyday Sidoarjo Classic · Rp25.000</div>
+          </div>
+        </div>
+        <button type="button" id="drawer-upsell-classic-btn" class="kora-btn-green" style="padding:7px 14px; font-size:0.75rem;">Tambah Rp25k</button>
+      </div>
+
+      <div class="drawer-footer">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span style="font-size:0.86rem; color:var(--kora-muted);">Estimated Subtotal</span>
+          <strong id="cart-subtotal-val" class="tabular-nums" style="font-family:var(--font-display); font-size:1.45rem;">Rp125.000</strong>
+        </div>
+        <button type="button" id="checkout-sim-btn" class="kora-btn-green" style="width:100%; justify-content:center; padding-block:14px; font-size:0.94rem;">
+          <span>Proceed to Pantry Checkout</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+
+  <!-- ========================================================================
+       ANTIKODE SKILL TEST BRIEF C CASE STUDY & REASONING MODAL (<dialog>)
+       ======================================================================== -->
+  <dialog id="case-study-modal" class="ulek-dialog" closedby="any" aria-labelledby="case-study-modal-title">
+    <div style="background:var(--kora-ivory-bg); padding:clamp(22px, 3.5vw, 36px); max-height:90vh; overflow-y:auto;">
+      <div id="case-study-content">
+        <!-- Populated by renderCaseStudyModal() in js/app.js -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification -->
+  <div id="toast-banner" class="toast-banner" role="status" aria-live="polite">
+    <span class="kora-dot" style="background:var(--kora-green);" aria-hidden="true"></span>
+    <span id="toast-message">Added to Pantry Bag</span>
+  </div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

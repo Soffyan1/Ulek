@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 38" fill="none">
+  <g fill="#FFFFFF">
+    <path d="M8 25C10 20 15 17 20 18C23 18.5 25 17 26 15C27 13 26 10 23 9C21 8.5 20 7 21 5.5C21.8 4.2 23.5 4 25 4.5C28 5.5 31 8.5 30 13C29 17 26 21 28 25C26 26.5 23 27 20 27C14 27 10 26 8 25Z"/>
+    <path d="M20 7L24 7L22 9Z" opacity="0.8"/>
+    <ellipse cx="14" cy="24" rx="8" ry="4" opacity="0.4"/>
+  </g>
+  <text x="38" y="19" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="12.5" font-weight="800" letter-spacing="0.03em">BEBEK SINJAY</text>
+  <text x="38" y="30" fill="#FFFFFF" opacity="0.72" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.08em">BANGKALAN · SURABAYA</text>
+</svg>

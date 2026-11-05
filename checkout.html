@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout &amp; Pembayaran | ULEK Artisanal Archipelago Sambal</title>
+  <meta name="description" content="Selesaikan pemesanan ULEK Archipelago Reserve Sambal dan 1987 Sidoarjo Original dengan kurir instan dan metode pembayaran aman.">
+  <link rel="icon" type="image/png" href="./assets/jar-matah.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="checkout-page-body">
+
+  <!-- Top Sticky Checkout Navigation -->
+  <header class="checkout-navbar">
+    <div class="checkout-navbar-inner">
+      <!-- Logo Branding -->
+      <a href="index.html" style="display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--kora-ink);">
+        <img src="./assets/ulek-logo-original.png" alt="ULEK" style="height:32px; width:auto; object-fit:contain;">
+        <span style="font-family:var(--font-display); font-size:1.15rem; font-weight:800; letter-spacing:-0.03em;">ulek<sup style="font-size:0.6rem; font-weight:700;">™</sup></span>
+      </a>
+
+      <!-- Progress Stepper -->
+      <nav class="checkout-steps-bar" aria-label="Langkah Checkout">
+        <div class="checkout-step-item is-completed">
+          <span class="checkout-step-num">✓</span>
+          <span>Pantry Bag</span>
+        </div>
+        <span class="checkout-step-sep">›</span>
+        <div class="checkout-step-item is-active">
+          <span class="checkout-step-num">2</span>
+          <span>Detail Pengiriman</span>
+        </div>
+        <span class="checkout-step-sep">›</span>
+        <div class="checkout-step-item">
+          <span class="checkout-step-num">3</span>
+          <span>Pembayaran</span>
+        </div>
+      </nav>
+
+      <!-- Back to Store Link -->
+      <a href="index.html" class="kora-btn-cream checkout-back-link" style="text-decoration:none;">
+        <span>Kembali Belanja</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Checkout Container -->
+  <main class="checkout-container">
+    <div style="margin-bottom:28px;">
+      <div class="kora-badge-group" style="margin-bottom:8px;">
+        <span class="kora-service-pill">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>256 Bit SSL Secured Checkout</span>
+        </span>
+        <span class="kora-dietary-pill">Direct from Sidoarjo Kitchen</span>
+      </div>
+      <h1 style="font-family:var(--font-display); font-size:clamp(1.8rem, 3.5vw, 2.5rem); font-weight:800; letter-spacing:-0.03em; margin:0 0 6px;">
+        Checkout &amp; Pembayaran Pantry
+      </h1>
+      <p style="font-size:0.92rem; color:var(--kora-muted); margin:0;">
+        Lengkapi alamat pengiriman dan pilih metode pembayaran untuk memproses pesanan sambal nusantara Anda.
+      </p>
+    </div>
+
+    <form id="checkout-form" class="checkout-grid" onsubmit="return false;">
+      <!-- Left Column: Forms -->
+      <div class="checkout-form-column">
+        
+        <!-- Section 1: Customer Contact -->
+        <section class="checkout-card">
+          <div class="checkout-card-header">
+            <span class="checkout-card-num">1</span>
+            <div>
+              <h2 class="checkout-card-title">Data Kontak Pemesan</h2>
+              <span class="checkout-label-sub">Invoice digital dan update resi kurir akan dikirimkan ke kontak ini</span>
+            </div>
+          </div>
+
+          <div class="checkout-form-grid-2">
+            <div class="checkout-input-group">
+              <label for="contact-name" class="checkout-label">Nama Lengkap *</label>
+              <input type="text" id="contact-name" class="checkout-input" placeholder="e.g. Dimas Kusuma" required value="Dimas Kusuma">
+            </div>
+            <div class="checkout-input-group">
+              <label for="contact-phone" class="checkout-label">No. WhatsApp / HP *</label>
+              <input type="tel" id="contact-phone" class="checkout-input" placeholder="e.g. 081289347192" required value="081289347192">
+            </div>
+          </div>
+
+          <div class="checkout-input-group">
+            <label for="contact-email" class="checkout-label">Alamat Email *</label>
+            <input type="email" id="contact-email" class="checkout-input" placeholder="e.g. dimas@pantryclub.id" required value="dimas@pantryclub.id">
+          </div>
+        </section>
+
+        <!-- Section 2: Delivery Address -->
+        <section class="checkout-card">
+          <div class="checkout-card-header">
+            <span class="checkout-card-num">2</span>
+            <div>
+              <h2 class="checkout-card-title">Alamat Pengiriman (Indonesia)</h2>
+              <span class="checkout-label-sub">Pengiriman aman dengan box insulasi dingin termal</span>
+            </div>
+          </div>
+
+          <div class="checkout-input-group">
+            <label for="shipping-address" class="checkout-label">Alamat Lengkap &amp; Nomor Unit *</label>
+            <textarea id="shipping-address" class="checkout-textarea" placeholder="Nama Jalan, Blok, No. Rumah, RT/RW, Patokan / Nama Gedung" required>Jl. Senopati No. 42, Kebayoran Baru (Lobby Residence Senopati Suites)</textarea>
+          </div>
+
+          <div class="checkout-form-grid-2">
+            <div class="checkout-input-group">
+              <label for="shipping-province" class="checkout-label">Provinsi *</label>
+              <select id="shipping-province" class="checkout-select">
+                <option value="DKI Jakarta" selected>DKI Jakarta</option>
+                <option value="Jawa Barat">Jawa Barat</option>
+                <option value="Jawa Timur">Jawa Timur</option>
+                <option value="Banten">Banten</option>
+                <option value="DI Yogyakarta">DI Yogyakarta</option>
+                <option value="Jawa Tengah">Jawa Tengah</option>
+                <option value="Bali">Bali</option>
+                <option value="Sumatera Utara">Sumatera Utara</option>
+                <option value="Sulawesi Utara">Sulawesi Utara</option>
+              </select>
+            </div>
+            <div class="checkout-input-group">
+              <label for="shipping-city" class="checkout-label">Kota / Kabupaten *</label>
+              <input type="text" id="shipping-city" class="checkout-input" placeholder="e.g. Jakarta Selatan" required value="Jakarta Selatan">
+            </div>
+          </div>
+
+          <div class="checkout-form-grid-2">
+            <div class="checkout-input-group">
+              <label for="shipping-district" class="checkout-label">Kecamatan *</label>
+              <input type="text" id="shipping-district" class="checkout-input" placeholder="e.g. Kebayoran Baru" required value="Kebayoran Baru">
+            </div>
+            <div class="checkout-input-group">
+              <label for="shipping-postal" class="checkout-label">Kode Pos *</label>
+              <input type="text" id="shipping-postal" class="checkout-input" placeholder="e.g. 12190" required value="12190">
+            </div>
+          </div>
+
+          <div class="checkout-input-group">
+            <label for="shipping-notes" class="checkout-label">
+              <span>Catatan Pengantaran untuk Kurir</span>
+              <span class="checkout-label-sub">Opsional</span>
+            </label>
+            <input type="text" id="shipping-notes" class="checkout-input" placeholder="e.g. Titip di meja resepsionis atau hubungi WA saat tiba">
+          </div>
+        </section>
+
+        <!-- Section 3: Gifting Options (Optional) -->
+        <section class="checkout-card">
+          <div class="checkout-card-header">
+            <span class="checkout-card-num">3</span>
+            <div>
+              <h2 class="checkout-card-title">Opsi Pesanan Hadiah (Gifting)</h2>
+              <span class="checkout-label-sub">Kirim langsung ke teman atau kerabat dengan kartu ucapan linen ULEK</span>
+            </div>
+          </div>
+
+          <label style="display:flex; align-items:flex-start; gap:12px; cursor:pointer; margin-bottom:14px;">
+            <input type="checkbox" id="gift-toggle-check" checked style="width:18px; height:18px; margin-top:2px; accent-color:var(--ulek-red-orange); cursor:pointer;">
+            <div>
+              <strong style="font-size:0.9rem; color:var(--kora-ink);">Kirim pesanan ini sebagai hadiah (Gifting Box Delivery)</strong>
+              <div style="font-size:0.78rem; color:var(--kora-muted);">Harga tidak akan dicantumkan pada label fisik paket yang dikirimkan.</div>
+            </div>
+          </label>
+
+          <div id="gift-fields-wrapper" style="display:flex; flex-direction:column; gap:14px; padding-top:10px; border-top:1px dashed var(--kora-border);">
+            <div class="checkout-form-grid-2">
+              <div class="checkout-input-group">
+                <label for="gift-recipient-name" class="checkout-label">Nama Penerima Hadiah</label>
+                <input type="text" id="gift-recipient-name" class="checkout-input" placeholder="e.g. Nadia Kusuma" value="Nadia Kusuma">
+              </div>
+              <div class="checkout-input-group">
+                <label for="gift-recipient-phone" class="checkout-label">No. WhatsApp Penerima</label>
+                <input type="tel" id="gift-recipient-phone" class="checkout-input" placeholder="e.g. 08119827364" value="08119827364">
+              </div>
+            </div>
+            <div class="checkout-input-group">
+              <label for="gift-card-message" class="checkout-label">
+                <span>Pesan Kartu Ucapan Linen Eksklusif</span>
+                <span class="checkout-label-sub">Tercetak rapi di dalam box</span>
+              </label>
+              <textarea id="gift-card-message" class="checkout-textarea" placeholder="Tuliskan ucapan selamat atau pesan hangat Anda di sini...">Warmest wishes for your new kitchen table enjoy the archipelago tasting flight with warm jasmine rice!</textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Shipping Method -->
+        <section class="checkout-card">
+          <div class="checkout-card-header">
+            <span class="checkout-card-num">4</span>
+            <div>
+              <h2 class="checkout-card-title">Pilihan Kurir &amp; Pengiriman</h2>
+              <span class="checkout-label-sub">Setiap botol sambal dikemas dengan air cushion dan seal higienis</span>
+            </div>
+          </div>
+
+          <div class="courier-cards-stack" role="radiogroup" aria-label="Metode Pengiriman">
+            <!-- Option 1: Instant -->
+            <label class="courier-card is-active" data-courier="instant">
+              <div class="courier-card-left">
+                <div class="courier-radio" aria-hidden="true"></div>
+                <div>
+                  <div class="courier-title">Instant 1 to 3 Jam (GoSend / GrabExpress)</div>
+                  <div class="courier-desc">Tiba hari ini dalam 1 hingga 3 jam di area Jabodetabek · Paling segar</div>
+                </div>
+              </div>
+              <div class="courier-price tabular-nums">Rp25.000</div>
+            </label>
+
+            <!-- Option 2: Same Day Paxel Cold -->
+            <label class="courier-card" data-courier="paxel">
+              <div class="courier-card-left">
+                <div class="courier-radio" aria-hidden="true"></div>
+                <div>
+                  <div class="courier-title">Same Day Delivery (Paxel Cold Insulated)</div>
+                  <div class="courier-desc">Pengiriman pendingin termal suhu terjaga · Tiba sore hari</div>
+                </div>
+              </div>
+              <div class="courier-price tabular-nums">Rp20.000</div>
+            </label>
+
+            <!-- Option 3: Next Day Express -->
+            <label class="courier-card" data-courier="express">
+              <div class="courier-card-left">
+                <div class="courier-radio" aria-hidden="true"></div>
+                <div>
+                  <div class="courier-title">Next Day Express (JNE YES / SiCepat BEST)</div>
+                  <div class="courier-desc">Estimasi 1 hari kerja · Seluruh kota besar di Indonesia</div>
+                </div>
+              </div>
+              <div class="courier-price tabular-nums" id="courier-express-price">
+                <span class="courier-price-free">GRATIS</span>
+              </div>
+            </label>
+          </div>
+        </section>
+
+        <!-- Section 5: Payment Method -->
+        <section class="checkout-card">
+          <div class="checkout-card-header">
+            <span class="checkout-card-num">5</span>
+            <div>
+              <h2 class="checkout-card-title">Metode Pembayaran</h2>
+              <span class="checkout-label-sub">Verifikasi pembayaran otomatis instan tanpa perlu konfirmasi manual</span>
+            </div>
+          </div>
+
+          <div class="payment-methods-stack" role="radiogroup" aria-label="Pilihan Pembayaran">
+            <!-- 1. QRIS Instant (Rekomendasi) -->
+            <div class="payment-method-card is-active" data-payment="qris">
+              <div class="payment-method-header">
+                <div class="payment-method-left">
+                  <div class="courier-radio" aria-hidden="true"></div>
+                  <img src="./payment/qris.webp" alt="QRIS" class="payment-method-badge-img">
+                  <div>
+                    <div style="font-family:var(--font-display); font-size:0.96rem; font-weight:700; color:var(--kora-ink);">
+                      QRIS Instant (GoPay, OVO, ShopeePay, BCA, Livin, Dana)
+                    </div>
+                    <div style="font-size:0.76rem; color:var(--kora-muted);">
+                      Scan dengan aplikasi ewallet atau mobile banking apa pun
+                    </div>
+                  </div>
+                </div>
+                <span class="format-badge-popular">Rekomendasi</span>
+              </div>
+              <div class="payment-details-panel">
+                <div style="display:flex; align-items:center; gap:10px; background:#F8F8F4; padding:12px; border-radius:12px; border:1px solid var(--kora-border);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ulek-red-orange); flex-shrink:0;">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>QRIS dinamis otomatis terbuat saat Anda menekan tombol bayar dengan waktu verifikasi instan 5 detik.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Transfer Bank (Accordion Dropdown with Bank List) -->
+            <div class="payment-method-card" data-payment="bank-transfer">
+              <div class="payment-method-header">
+                <div class="payment-method-left">
+                  <div class="courier-radio" aria-hidden="true"></div>
+                  <div style="display:flex; align-items:center; gap:4px; flex-shrink:0;">
+                    <img src="./payment/bca.webp" alt="BCA" style="width:34px; height:22px; object-fit:contain; border-radius:5px; background:#FFFFFF; border:1px solid var(--kora-border); padding:2px;">
+                    <img src="./payment/mandiri.webp" alt="Mandiri" style="width:34px; height:22px; object-fit:contain; border-radius:5px; background:#FFFFFF; border:1px solid var(--kora-border); padding:2px;">
+                    <img src="./payment/bni.webp" alt="BNI" style="width:34px; height:22px; object-fit:contain; border-radius:5px; background:#FFFFFF; border:1px solid var(--kora-border); padding:2px;">
+                  </div>
+                  <div>
+                    <div style="font-family:var(--font-display); font-size:0.96rem; font-weight:700; color:var(--kora-ink);">
+                      Transfer Bank
+                    </div>
+                    <div style="font-size:0.76rem; color:var(--kora-muted);">
+                      Virtual Account otomatis dan transfer antar bank nasional
+                    </div>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span class="format-badge-subtle">Auto Check</span>
+                  <svg class="payment-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Accordion Body: List of Banks & Details -->
+              <div class="payment-details-panel">
+                <div style="font-size:0.8rem; font-weight:700; color:var(--kora-ink); margin-bottom:8px;">
+                  Pilih Bank Tujuan Transfer:
+                </div>
+
+                <div class="bank-list-stack" role="radiogroup" aria-label="Pilih Bank">
+                  <!-- BCA -->
+                  <div class="bank-item is-selected" data-bank-code="bca" data-bank-name="BCA Virtual Account" data-bank-va="8801 2893 4719 0021" data-bank-logo="./payment/bca.webp">
+                    <div class="bank-item-left">
+                      <img src="./payment/bca.webp" alt="BCA" class="bank-logo-img">
+                      <div class="bank-info">
+                        <span class="bank-name">BCA (Bank Central Asia)</span>
+                        <span class="bank-sub">myBCA, BCA mobile, KlikBCA, ATM BCA</span>
+                      </div>
+                    </div>
+                    <div class="bank-radio-circle" aria-hidden="true"></div>
+                  </div>
+
+                  <!-- Mandiri -->
+                  <div class="bank-item" data-bank-code="mandiri" data-bank-name="Mandiri Virtual Account" data-bank-va="8912 3049 8812 5543" data-bank-logo="./payment/mandiri.webp">
+                    <div class="bank-item-left">
+                      <img src="./payment/mandiri.webp" alt="Bank Mandiri" class="bank-logo-img">
+                      <div class="bank-info">
+                        <span class="bank-name">Bank Mandiri</span>
+                        <span class="bank-sub">Livin' by Mandiri, ATM Mandiri</span>
+                      </div>
+                    </div>
+                    <div class="bank-radio-circle" aria-hidden="true"></div>
+                  </div>
+
+                  <!-- BNI -->
+                  <div class="bank-item" data-bank-code="bni" data-bank-name="BNI Virtual Account" data-bank-va="9881 2893 0029 3811" data-bank-logo="./payment/bni.webp">
+                    <div class="bank-item-left">
+                      <img src="./payment/bni.webp" alt="BNI" class="bank-logo-img">
+                      <div class="bank-info">
+                        <span class="bank-name">BNI (Bank Negara Indonesia)</span>
+                        <span class="bank-sub">BNI Mobile Banking, ATM BNI</span>
+                      </div>
+                    </div>
+                    <div class="bank-radio-circle" aria-hidden="true"></div>
+                  </div>
+
+                  <!-- BRI -->
+                  <div class="bank-item" data-bank-code="bri" data-bank-name="BRI Virtual Account (BRIVA)" data-bank-va="1289 3001 9283 4710" data-bank-logo="./payment/bri.webp">
+                    <div class="bank-item-left">
+                      <img src="./payment/bri.webp" alt="BRI" class="bank-logo-img">
+                      <div class="bank-info">
+                        <span class="bank-name">BRI (Bank Rakyat Indonesia)</span>
+                        <span class="bank-sub">BRImo, Seluruh ATM Link &amp; BRI</span>
+                      </div>
+                    </div>
+                    <div class="bank-radio-circle" aria-hidden="true"></div>
+                  </div>
+
+                  <!-- Permata -->
+                  <div class="bank-item" data-bank-code="permata" data-bank-name="Permata Virtual Account" data-bank-va="7892 0182 3948 1029" data-bank-logo="./payment/permata.webp">
+                    <div class="bank-item-left">
+                      <img src="./payment/permata.webp" alt="Bank Permata" class="bank-logo-img">
+                      <div class="bank-info">
+                        <span class="bank-name">Bank Permata</span>
+                        <span class="bank-sub">PermataME, ATM Bersama &amp; Prima</span>
+                      </div>
+                    </div>
+                    <div class="bank-radio-circle" aria-hidden="true"></div>
+                  </div>
+
+                  <!-- BSI -->
+                  <div class="bank-item" data-bank-code="bsi" data-bank-name="BSI Virtual Account" data-bank-va="4510 2893 0192 8374" data-bank-logo="./payment/bsi.webp">
+                    <div class="bank-item-left">
+                      <img src="./payment/bsi.webp" alt="Bank Syariah Indonesia" class="bank-logo-img">
+                      <div class="bank-info">
+                        <span class="bank-name">Bank Syariah Indonesia (BSI)</span>
+                        <span class="bank-sub">BSI Mobile, ATM Syariah</span>
+                      </div>
+                    </div>
+                    <div class="bank-radio-circle" aria-hidden="true"></div>
+                  </div>
+
+                  <!-- CIMB Niaga -->
+                  <div class="bank-item" data-bank-code="cimb" data-bank-name="CIMB Niaga Virtual Account" data-bank-va="5129 0192 8301 9481" data-bank-logo="./payment/cimb.webp">
+                    <div class="bank-item-left">
+                      <img src="./payment/cimb.webp" alt="CIMB Niaga" class="bank-logo-img">
+                      <div class="bank-info">
+                        <span class="bank-name">CIMB Niaga</span>
+                        <span class="bank-sub">OCTO Mobile, OCTO Clicks, ATM CIMB</span>
+                      </div>
+                    </div>
+                    <div class="bank-radio-circle" aria-hidden="true"></div>
+                  </div>
+
+                  <!-- BTN -->
+                  <div class="bank-item" data-bank-code="btn" data-bank-name="Bank BTN Virtual Account" data-bank-va="9283 0192 8347 1029" data-bank-logo="./payment/btn.webp">
+                    <div class="bank-item-left">
+                      <img src="./payment/btn.webp" alt="Bank BTN" class="bank-logo-img">
+                      <div class="bank-info">
+                        <span class="bank-name">Bank BTN</span>
+                        <span class="bank-sub">Bale by BTN, ATM BTN &amp; Link</span>
+                      </div>
+                    </div>
+                    <div class="bank-radio-circle" aria-hidden="true"></div>
+                  </div>
+                </div>
+
+                <!-- Active Selected Bank Summary Box -->
+                <div class="bank-info-box" id="bank-info-box">
+                  <div class="bank-info-box-header">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                      <img id="active-bank-logo" src="./payment/bca.webp" alt="BCA" class="bank-active-logo">
+                      <span id="active-bank-title" style="font-weight:700; color:var(--kora-ink);">BCA Virtual Account</span>
+                    </div>
+                    <span style="font-size:0.7rem; color:#2E7D32; font-weight:700; background:#E8F5E9; padding:2px 8px; border-radius:6px;">Verifikasi Otomatis</span>
+                  </div>
+                  <div class="bank-va-row">
+                    <span id="active-bank-va-num" class="bank-va-num">8801 2893 4719 0021</span>
+                    <button type="button" id="copy-bank-va-num-btn" class="bank-copy-btn">Salin</button>
+                  </div>
+                  <div style="font-size:0.76rem; color:var(--kora-muted); line-height:1.4;">
+                    Atas Nama: <strong style="color:var(--kora-ink);">PT ULEK REMPAH NUSANTARA</strong> · Verifikasi otomatis 24 jam tanpa perlu upload bukti transfer.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column: Sticky Order Summary -->
+      <aside class="checkout-summary-column">
+        <div class="checkout-summary-card">
+          <h2 class="checkout-summary-title">Ringkasan Pesanan Pantry</h2>
+
+          <!-- Items list container -->
+          <div id="checkout-items-list" class="checkout-items-list">
+            <!-- Dynamically populated by js/checkout.js -->
+          </div>
+
+          <!-- Promo Code Box -->
+          <div class="checkout-promo-box">
+            <input type="text" id="checkout-promo-input" class="checkout-promo-input" placeholder="KODE PROMO: ULEK2026">
+            <button type="button" id="checkout-promo-btn" class="checkout-promo-btn">Pakai</button>
+          </div>
+          <div id="promo-message" style="display:none; font-size:0.75rem; margin-top:-10px; margin-bottom:12px; font-weight:600;"></div>
+
+          <!-- Calculation Table -->
+          <div class="checkout-calc-table">
+            <div class="checkout-calc-row">
+              <span>Subtotal Produk</span>
+              <strong id="calc-subtotal" class="tabular-nums" style="font-family:var(--font-mono);">Rp0</strong>
+            </div>
+            <div class="checkout-calc-row">
+              <span>Biaya Pengiriman</span>
+              <strong id="calc-shipping" class="tabular-nums" style="font-family:var(--font-mono);">Rp25.000</strong>
+            </div>
+            <div class="checkout-calc-row">
+              <span>Kemasan Insulasi Dingin Termal</span>
+              <strong class="tabular-nums" style="color:#2E7D32; font-weight:700;">GRATIS</strong>
+            </div>
+            <div class="checkout-calc-row" id="calc-discount-row" style="display:none; color:var(--ulek-red-orange);">
+              <span>Diskon Voucher</span>
+              <strong id="calc-discount" class="tabular-nums" style="font-family:var(--font-mono);">-Rp0</strong>
+            </div>
+          </div>
+
+          <!-- Grand Total Row -->
+          <div class="checkout-total-row">
+            <span class="checkout-total-label">Total Tagihan</span>
+            <span id="calc-total" class="checkout-total-val tabular-nums">Rp0</span>
+          </div>
+
+          <!-- Big Action Button -->
+          <button type="button" id="pay-now-btn" class="checkout-pay-btn">
+            <span>Bayar Sekarang</span>
+          </button>
+
+          <!-- Trust Badges List -->
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:20px; font-size:0.76rem; color:var(--kora-body); line-height:1.45;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:#2E7D32; font-size:0.9rem;">✓</span>
+              <span><strong>100% Garansi Pecah:</strong> Ganti jar baru gratis jika botol pecah di jalan.</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:#2E7D32; font-size:0.9rem;">✓</span>
+              <span><strong>Segel Higienis:</strong> Setiap jar kedap udara tanpa pengawet buatan.</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:#2E7D32; font-size:0.9rem;">✓</span>
+              <span><strong>Resep Warung 1987:</strong> Keaslian cobek batu Jawa Timur terjaga 100%.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </form>
+  </main>
+
+  <!-- Interactive Order Success & Payment Modal -->
+  <div id="checkout-success-modal" class="checkout-modal-backdrop" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="success-title">
+    <div class="checkout-success-card">
+      <div class="checkout-success-icon">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <div class="format-badge-popular" style="display:inline-block; margin-bottom:10px;">
+        Pesanan Berhasil Dibuat
+      </div>
+
+      <h2 id="success-title" style="font-family:var(--font-display); font-size:1.75rem; font-weight:800; color:var(--kora-ink); margin:0 0 6px;">
+        Terima Kasih Atas Pesanan Anda!
+      </h2>
+      <p style="font-size:0.88rem; color:var(--kora-muted); margin:0 0 18px;">
+        Nomor Pesanan: <strong id="success-order-id" style="font-family:var(--font-mono); color:var(--kora-ink);">#ULK 2026 8941</strong>
+      </p>
+
+      <!-- Dynamic QRIS payment container -->
+      <div id="success-qris-container" style="background:#FBFBFA; border:1px solid var(--kora-border); border-radius:20px; padding:20px; margin-bottom:20px;">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--kora-muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;">
+          Pindai QRIS untuk Menyelesaikan Pembayaran
+        </div>
+        <!-- High-res QRIS code presentation -->
+        <div style="background:#FFFFFF; padding:14px; border-radius:14px; display:inline-block; border:1px solid var(--kora-border); margin-bottom:10px;">
+          <svg width="180" height="180" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="QRIS Code">
+            <rect width="200" height="200" fill="white"/>
+            <!-- Outer Markers -->
+            <rect x="20" y="20" width="45" height="45" stroke="#1A1A1A" stroke-width="10" fill="none"/>
+            <rect x="33" y="33" width="19" height="19" fill="#E63E26"/>
+            <rect x="135" y="20" width="45" height="45" stroke="#1A1A1A" stroke-width="10" fill="none"/>
+            <rect x="148" y="33" width="19" height="19" fill="#E63E26"/>
+            <rect x="20" y="135" width="45" height="45" stroke="#1A1A1A" stroke-width="10" fill="none"/>
+            <rect x="33" y="148" width="19" height="19" fill="#E63E26"/>
+            <!-- Data Matrix Blocks -->
+            <rect x="75" y="20" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="95" y="20" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="115" y="20" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="75" y="40" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="105" y="40" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="85" y="60" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="105" y="60" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="135" y="75" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="155" y="75" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="175" y="75" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="20" y="75" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="40" y="75" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="20" y="95" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="50" y="95" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="75" y="95" width="12" height="12" fill="#E63E26"/>
+            <rect x="95" y="95" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="115" y="95" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="135" y="95" width="12" height="12" fill="#E63E26"/>
+            <rect x="165" y="95" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="20" y="115" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="60" y="115" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="85" y="115" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="115" y="115" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="145" y="115" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="175" y="115" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="75" y="135" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="105" y="135" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="125" y="135" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="155" y="135" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="175" y="135" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="75" y="155" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="95" y="155" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="125" y="155" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="145" y="155" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="75" y="175" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="105" y="175" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="135" y="175" width="12" height="12" fill="#1A1A1A"/>
+            <rect x="165" y="175" width="12" height="12" fill="#1A1A1A"/>
+          </svg>
+        </div>
+        <div style="font-size:0.8rem; color:var(--kora-body); line-height:1.4;">
+          Batas Waktu Pembayaran: <strong id="success-countdown" style="color:var(--ulek-red-orange); font-family:var(--font-mono);">14:59</strong>
+        </div>
+      </div>
+
+      <!-- Virtual Account Details Container (Shown when VA is selected) -->
+      <div id="success-va-container" style="display:none; background:#FBFBFA; border:1px solid var(--kora-border); border-radius:20px; padding:20px; margin-bottom:20px;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:10px;">
+          <img id="success-va-logo" src="./payment/bca.webp" alt="Bank Logo" class="bank-active-logo">
+          <span id="success-va-title" style="font-size:0.86rem; font-weight:700; color:var(--kora-ink);">BCA Virtual Account</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:8px;">
+          <span id="success-va-number" style="font-family:var(--font-mono); font-size:1.4rem; font-weight:800; letter-spacing:0.05em; color:var(--kora-ink);">
+            8801 2893 4719 0021
+          </span>
+          <button type="button" id="copy-va-btn" class="bank-copy-btn">
+            Salin
+          </button>
+        </div>
+        <div style="font-size:0.78rem; color:var(--kora-muted);">
+          Atas Nama: <strong>ULEK ARCHIPELAGO PANTRY</strong>
+        </div>
+      </div>
+
+      <!-- Order Summary Card inside modal -->
+      <div style="background:#F4F4EC; border-radius:16px; padding:14px 18px; margin-bottom:20px; text-align:left; font-size:0.84rem;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+          <span style="color:var(--kora-muted);">Total Pembayaran:</span>
+          <strong id="success-final-total" style="font-family:var(--font-mono); font-size:1.05rem; color:var(--kora-ink);">Rp0</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+          <span style="color:var(--kora-muted);">Penerima:</span>
+          <strong id="success-recipient-name">Dimas Kusuma</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between;">
+          <span style="color:var(--kora-muted);">Status Pesanan:</span>
+          <span style="color:#2E7D32; font-weight:700;">Menunggu Verifikasi Otomatis</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a id="whatsapp-confirm-link" href="#" target="_blank" rel="noopener noreferrer" class="kora-btn-green" style="width:100%; justify-content:center; padding-block:15px; text-decoration:none; font-size:0.95rem;">
+          <span>Konfirmasi Pesanan ke WhatsApp ULEK</span>
+        </a>
+        <a href="index.html" class="kora-btn-cream" style="width:100%; justify-content:center; padding-block:14px; text-decoration:none; font-size:0.92rem;">
+          <span>Kembali ke Beranda ULEK</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/checkout.js"></script>
+</body>
+</html>

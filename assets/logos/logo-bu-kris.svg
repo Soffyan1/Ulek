@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 38" fill="none">
+  <g fill="#FFFFFF">
+    <ellipse cx="18" cy="24" rx="14" ry="7" opacity="0.35"/>
+    <path d="M4 22C4 28 10 32 18 32C26 32 32 28 32 22C32 20 4 20 4 22Z"/>
+    <path d="M22 10L17 21C16.5 22 15 22 14.5 21L13 18C12.5 17 13 16 14 15.5L19 9C20 8 21.5 8.5 22 10Z"/>
+  </g>
+  <text x="40" y="19" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" letter-spacing="0.04em">WARUNG BU KRIS</text>
+  <text x="40" y="30" fill="#FFFFFF" opacity="0.72" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.08em">SPESIALIS SAMBAL · EST. 1995</text>
+</svg>

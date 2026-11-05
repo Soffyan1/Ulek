@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 38" fill="none">
+  <g fill="#FFFFFF">
+    <path d="M6 18C7 26 13 30 19 30C25 30 31 26 32 18H6Z"/>
+    <path d="M12 30H26V32H12V30Z"/>
+    <path d="M13 14C13 10 16 10 16 6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M19 14C19 11 22 11 22 7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M25 14C25 10 28 10 28 6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="40" y="19" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="800" letter-spacing="0.02em">SOTO PAK SADI</text>
+  <text x="40" y="30" fill="#FFFFFF" opacity="0.72" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.08em">ASLI AMBENGAN · EST. 1971</text>
+</svg>

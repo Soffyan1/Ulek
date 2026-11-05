@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 38" fill="none">
+  <g fill="#FFFFFF">
+    <path d="M18 5L28 20H18V5Z"/>
+    <path d="M15 10L7 20H15V10Z" opacity="0.8"/>
+    <path d="M5 23C10 26 26 26 31 23L29 27C24 29 12 29 7 27L5 23Z"/>
+    <path d="M8 30C12 31.5 24 31.5 28 30" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="38" y="19" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" letter-spacing="0.04em">LAYAR SEAFOOD</text>
+  <text x="38" y="30" fill="#FFFFFF" opacity="0.72" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.08em">SURABAYA · EST. 1999</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 38" fill="none">
+  <g fill="#FFFFFF">
+    <path d="M6 18C6 26 12 30 19 30C26 30 32 26 32 18H6Z"/>
+    <path d="M4 17H34V15H4V17Z"/>
+    <path d="M19 5C17 9 20 11 17 14C19 14 22 12 21 9C23 11 23 13 22 14C24 13 25 10 23 7C22 5.5 20.5 4.5 19 5Z"/>
+  </g>
+  <text x="40" y="19" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" letter-spacing="0.04em">RAWON SETAN</text>
+  <text x="40" y="30" fill="#FFFFFF" opacity="0.72" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="600" letter-spacing="0.08em">EMBONG MALANG · EST. 1952</text>
+</svg>
