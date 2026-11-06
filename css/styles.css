@@ -4312,6 +4312,24 @@ a.kora-btn-dark .kora-dot,
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.kora-footer-links-grid {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(220px, 1.4fr);
+  gap: 28px;
+  font-size: 0.86rem;
+}
+
+.kora-footer-links-grid a.kora-nav-item:hover {
+  color: var(--kora-green) !important;
+}
+
+@media (max-width: 640px) {
+  .kora-footer-links-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 .kora-footer-watermark {
   font-family: var(--font-display);
   font-size: clamp(6rem, 19vw, 16rem);
