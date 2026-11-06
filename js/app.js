@@ -1563,19 +1563,33 @@
   }
 
   function initFooterInteractions() {
-    const copyBtn = document.getElementById("copy-email-btn");
-    const labelEl = document.getElementById("copy-email-label");
-    if (copyBtn && labelEl) {
-      copyBtn.addEventListener("click", () => {
-        const email = copyBtn.getAttribute("data-email") || "hello@uleksidoarjo.id";
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(email).catch(() => {});
-        }
-        labelEl.textContent = "Copied: hello@uleksidoarjo.id ✓";
-        showToast("Copied hello@uleksidoarjo.id to clipboard");
-        setTimeout(() => {
-          labelEl.textContent = "Copy Email: hello@uleksidoarjo.id";
-        }, 2600);
+    const orderBtn = document.getElementById("footer-order-btn");
+    if (orderBtn) {
+      const recipient = "hello@uleksidoarjo.id";
+      const subject = "Inquiry Corporate Gift Order ULEK Nusantara";
+      const body = `Halo Tim ULEK Nusantara,
+
+Saya ingin melakukan pemesanan Corporate Gift Order / Parsel Kemitraan ULEK Sambal Nusantara dengan rincian sebagai berikut:
+
+• Nama Perusahaan / Instansi: 
+• Nama Kontak / PIC: 
+• Nomor Telepon / WhatsApp: 
+• Perkiraan Jumlah Paket / Jar: (misal: 50 Paket Custom 4 Jar Linen Gift Box)
+• Pilihan Varian Sambal: (Matah, Roa, Bajak, Andaliman, atau 1987 Classic)
+• Rencana Tanggal Pengiriman / Acara: 
+• Alamat Pengiriman: 
+• Catatan Khusus / Kebutuhan Custom Kartu Ucapan: 
+
+Mohon informasi penawaran harga khusus corporate, ketersediaan stok, dan prosedur pemesanannya.
+
+Terima kasih.`;
+
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      orderBtn.setAttribute("href", gmailUrl);
+
+      orderBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.open(gmailUrl, "_blank", "noopener,noreferrer");
       });
     }
   }
