@@ -384,7 +384,7 @@
         Math.min(1, (startCoverY - firstCardRect.top) / (startCoverY - endCoverY))
       );
       const introScale = 1 - coverProgress * 0.035;
-      const introOpacity = 1 - coverProgress * 0.85;
+      const introOpacity = Math.max(0.5, 1 - coverProgress * 0.5);
       introEl.style.transform = `scale3d(${introScale}, ${introScale}, 1)`;
       introEl.style.opacity = String(introOpacity);
     }
@@ -428,6 +428,7 @@
   function initReserveIntroObserver() {
     const introEl = document.getElementById("kora-services-sticky-intro");
     if (!introEl) return;
+    introEl.classList.add("is-visible");
 
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
@@ -435,17 +436,12 @@
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               introEl.classList.add("is-visible");
-            } else if (entry.boundingClientRect.top > (window.innerHeight || 800) * 0.85) {
-              // Smoothly reset only when user has scrolled back up into the hero section
-              introEl.classList.remove("is-visible");
             }
           });
         },
-        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+        { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
       );
       observer.observe(introEl);
-    } else {
-      introEl.classList.add("is-visible");
     }
   }
 
@@ -2066,10 +2062,22 @@ Terima kasih.`;
 
     document.querySelectorAll("[data-home-scroll]").forEach((link) => {
       link.addEventListener("click", (e) => {
-        const target = link.getAttribute("data-home-scroll");
-        if (state.activeView === "pdp") {
-          e.preventDefault();
-          closePdpViewAndReturnHome(target);
+        const targetSelector = link.getAttribute("data-home-scroll");
+        if (targetSelector) {
+          const targetEl = document.querySelector(targetSelector);
+          if (targetEl) {
+            e.preventDefault();
+            history.pushState(null, "", targetSelector);
+            const headerOffset = 90;
+            const elementPosition = targetEl.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+            const introEl = document.getElementById("kora-services-sticky-intro");
+            if (introEl) introEl.classList.add("is-visible");
+          }
         }
       });
     });
@@ -2253,6 +2261,23 @@ Terima kasih.`;
     renderCartDrawer();
     initSectionTitleWordHover();
     initGlobalEvents();
+
+    if (window.location.hash) {
+      setTimeout(() => {
+        const hashTarget = document.querySelector(window.location.hash);
+        if (hashTarget) {
+          const headerOffset = 90;
+          const elementPosition = hashTarget.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+          const introEl = document.getElementById("kora-services-sticky-intro");
+          if (introEl) introEl.classList.add("is-visible");
+        }
+      }, 120);
+    }
   }
 
   if (document.readyState === "loading") {

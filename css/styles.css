@@ -957,10 +957,6 @@ a.kora-btn-dark .kora-dot,
   min-height: 148px;
   background: var(--kora-charcoal);
 }
-  overflow: hidden;
-  min-height: 162px;
-  background: var(--kora-charcoal);
-}
 
 .kora-spotlight-img {
   width: 100%;
@@ -1382,6 +1378,7 @@ a.kora-btn-dark .kora-dot,
   max-width: 1260px;
   margin-inline: auto;
   margin-bottom: 100px;
+  scroll-margin-top: 100px;
 }
 
 .kora-problem-reveal-wrap {
@@ -1556,7 +1553,7 @@ a.kora-btn-dark .kora-dot,
 .kora-services-big-title .split-word {
   display: inline-block;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: visible;
   vertical-align: bottom;
   padding-bottom: 0.14em;
   margin-bottom: -0.14em;
@@ -1575,16 +1572,15 @@ a.kora-btn-dark .kora-dot,
 
 .kora-services-big-title .split-char {
   display: inline-block;
-  transform: translateY(118%) rotate(2.5deg);
-  opacity: 0;
-  filter: blur(5px);
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+  filter: blur(0);
   will-change: transform, opacity, filter;
   color: inherit;
   transition: transform 0.82s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.65s cubic-bezier(0.16, 1, 0.3, 1),
               color 450ms cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: calc(var(--char-index, 0) * 0.026s);
 }
 
 .kora-services-big-title .split-space {
@@ -1599,7 +1595,6 @@ a.kora-btn-dark .kora-dot,
   transform: translateY(0) rotate(0deg);
   opacity: 1;
   filter: blur(0);
-  transition-delay: 0s;
 }
 
 .kora-services-big-title .split-word:hover .split-char {
@@ -1618,13 +1613,13 @@ a.kora-btn-dark .kora-dot,
   max-width: 52ch;
   margin-inline: auto;
   margin-bottom: 0;
-  opacity: 0;
-  transform: translateY(38px);
-  filter: blur(8px);
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
   will-change: opacity, transform, filter;
-  transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.34s,
-              transform 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.34s,
-              filter 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.34s;
+  transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              transform 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              filter 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
 
 .kora-services-sticky-intro.is-visible .kora-services-lead-copy {
