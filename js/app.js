@@ -151,11 +151,6 @@
         addProductToCart(product.id, 1, bagBtn);
       };
     }
-    if (pdpBtn) {
-      pdpBtn.onclick = () => {
-        openPdpView(product.id);
-      };
-    }
   }
 
   /* ==========================================================================
@@ -620,17 +615,14 @@
 
             <!-- Full-Width Green CTA Bar Beneath White Panel (Matches Kora "Get Started" Bar) -->
             <div class="kora-service-bottom-cta-row">
-              <button type="button" class="kora-service-green-bar-btn" data-inspect-pdp="${p.id}">
-                <span>Inspect ${p.name} Jar (PDP) · ${p.priceFormatted}</span>
-              </button>
-              <button type="button" class="kora-service-quickbag-btn" data-quick-add="${p.id}" title="Add 1 jar to Pantry Bag">
-                <span>Pantry Bag</span>
+              <button type="button" class="kora-service-green-bar-btn" data-quick-add="${p.id}">
+                <span>Add ${p.name} to Pantry Bag · ${p.priceFormatted}</span>
               </button>
             </div>
           </div>
 
           <!-- Right Column: Full-Height Rounded Jar Image -->
-          <div class="kora-service-right" data-inspect-pdp="${p.id}" title="Click to open ${p.name} Product Detail Page">
+          <div class="kora-service-right">
             <img
               src="${p.image}"
               alt="ULEK ${p.name} ${p.origin} (${p.heatTag}, ${p.canonicalPairing})"
@@ -646,15 +638,6 @@
     `
       )
       .join("");
-
-    // Bind PDP and Add-to-Cart buttons
-    stack.querySelectorAll("[data-inspect-pdp]").forEach((el) => {
-      el.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const id = el.getAttribute("data-inspect-pdp");
-        openPdpView(id);
-      });
-    });
 
     // Bind Interactive Inspector Tabs (UI/UX Pro Max)
     stack.querySelectorAll(".card-tab-btn").forEach((btn) => {
@@ -945,9 +928,6 @@
                 <strong>Serving Ritual:</strong> ${pair.servingRitual}
               </p>
               <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <button type="button" class="kora-btn-dark" style="padding:8px 14px; font-size:0.78rem;" data-green-pdp="${product.id}">
-                  <span>Inspect ${product.name} Jar (PDP)</span>
-                </button>
                 <button type="button" class="kora-btn-cream" style="padding:8px 14px; font-size:0.78rem;" data-green-add="${product.id}">
                   <span>Add ${product.name} (${product.priceFormatted})</span>
                 </button>
@@ -967,12 +947,6 @@
           state.openPairingIds.push(id);
         }
         renderGreenPairingRows();
-      });
-    });
-
-    grid.querySelectorAll("[data-green-pdp]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        openPdpView(btn.getAttribute("data-green-pdp"));
       });
     });
 
@@ -1604,42 +1578,21 @@
         }, 2600);
       });
     }
-
-    document.querySelectorAll("[data-open-pdp]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        openPdpView(btn.getAttribute("data-open-pdp"));
-      });
-    });
   }
 
   /* ==========================================================================
-     10. Deliverable 02: Product Detail Page (PDP) View & Multi-SKU Switcher
+     10. Product Navigation & Return Home Helpers (PDP View Removed)
      ========================================================================== */
   function openPdpView(productId) {
-    state.pdpProductId = productId || "matah";
-    state.pdpMediaTab = "jar";
-    state.pdpPurchaseMode = "single";
-    state.pdpQty = 1;
-    state.activeView = "pdp";
-
-    const homeEl = document.getElementById("view-homepage");
-    const pdpEl = document.getElementById("view-pdp");
-    if (homeEl && pdpEl) {
-      homeEl.classList.add("is-hidden");
-      pdpEl.classList.add("is-active");
-    }
-    renderPdpView();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const target = productId === "classic-1987" ? "#gifting-section" : "#collection-section";
+    const el = document.querySelector(target);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   }
 
   function closePdpViewAndReturnHome(targetSelector) {
     state.activeView = "homepage";
     const homeEl = document.getElementById("view-homepage");
-    const pdpEl = document.getElementById("view-pdp");
-    if (homeEl && pdpEl) {
-      pdpEl.classList.remove("is-active");
-      homeEl.classList.remove("is-hidden");
-    }
+    if (homeEl) homeEl.classList.remove("is-hidden");
     if (targetSelector) {
       const target = document.querySelector(targetSelector);
       if (target) {
@@ -1652,398 +1605,6 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function computePdpPrice(product) {
-    if (state.pdpPurchaseMode === "trio") {
-      return Math.round(product.price * 3 * 0.92);
-    }
-    if (state.pdpPurchaseMode === "giftbox") {
-      return DATA.brand.giftBoxPrice;
-    }
-    return product.price;
-  }
-
-  function renderPdpView() {
-    const container = document.getElementById("view-pdp");
-    if (!container) return;
-
-    const product =
-      DATA.products.find((p) => p.id === state.pdpProductId) || DATA.products[0];
-    const unitOrPackPrice = computePdpPrice(product);
-    const totalPrice = unitOrPackPrice * state.pdpQty;
-
-    container.innerHTML = `
-      <!-- Top Ribbon: Back to Homepage + Instant 5-Jar Switcher -->
-      <div class="pdp-switcher-ribbon">
-        <button type="button" id="pdp-back-home-btn" class="pdp-back-btn">
-          <span>Back to Launch Homepage</span>
-        </button>
-
-        <div class="pdp-variant-tabs" role="tablist" aria-label="Switch Product Variant">
-          ${DATA.products
-            .map(
-              (p) => `
-            <button
-              type="button"
-              class="pdp-tab-btn ${p.id === product.id ? "is-active" : ""}"
-              data-pdp-switch="${p.id}"
-              role="tab"
-              aria-selected="${p.id === product.id}"
-            >
-              ${p.serial} · ${p.name} (${p.origin} · ${p.priceFormatted})
-            </button>
-          `
-            )
-            .join("")}
-        </div>
-      </div>
-
-      <!-- Main 2-Column Kora PDP Stage -->
-      <div class="pdp-main-grid">
-        <!-- Left: Visual Stage & 3-Mode Media Switcher -->
-        <div class="pdp-visual-stage">
-          <div class="pdp-stage-top-bar">
-            <span class="origin-pill">${product.origin.toUpperCase()} · ${product.coordinates}</span>
-            <span class="price-tag-pill tabular-nums">${product.jarSize} · ${product.priceFormatted}</span>
-          </div>
-
-          ${
-            state.pdpMediaTab === "ingredients"
-              ? `
-            <div class="pdp-ingredients-overlay-card">
-              <div style="font-family:var(--font-mono); font-size:0.72rem; text-transform:uppercase; color:var(--kora-muted); margin-bottom:8px;">
-                SINGLE-ORIGIN INGREDIENT BREAKDOWN &amp; WHY ${product.priceFormatted}
-              </div>
-              <h3 style="font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin-bottom:10px;">
-                ${product.subtitle}
-              </h3>
-              <p style="font-size:0.9rem; color:var(--kora-body); margin-bottom:14px;">
-                ${product.why100k}
-              </p>
-              <ul class="kora-subservices-grid">
-                ${product.ingredients
-                  .map(
-                    (ing) => `
-                  <li class="kora-subservice-item">
-                    <span class="kora-subservice-dot"></span>
-                    <span>${ing}</span>
-                  </li>
-                `
-                  )
-                  .join("")}
-              </ul>
-              <div style="margin-top:14px; padding-top:10px; border-top:1px solid var(--kora-border); font-size:0.78rem; color:var(--kora-muted);">
-                <strong>Shelf Life &amp; Storage:</strong> ${product.shelfLife}
-              </div>
-            </div>
-          `
-              : `
-            <img
-              src="${product.image}"
-              alt="ULEK ${product.name} (${product.origin})"
-              class="pdp-hero-img ${state.pdpMediaTab === "macro" ? "is-macro-zoom" : ""}"
-              width="520"
-              height="560"
-            >
-          `
-          }
-
-          <div class="pdp-stage-mode-switcher" role="tablist" aria-label="Inspect Jar View Mode">
-            <button type="button" class="pdp-media-tab-btn ${state.pdpMediaTab === "jar" ? "is-active" : ""}" data-pdp-media="jar">
-              01 · Studio Jar View
-            </button>
-            <button type="button" class="pdp-media-tab-btn ${state.pdpMediaTab === "macro" ? "is-active" : ""}" data-pdp-media="macro">
-              02 · Coarse Stone Grind Zoom
-            </button>
-            <button type="button" class="pdp-media-tab-btn ${state.pdpMediaTab === "ingredients" ? "is-active" : ""}" data-pdp-media="ingredients">
-              03 · Terroir &amp; Ingredients (${product.ingredients.length})
-            </button>
-          </div>
-        </div>
-
-        <!-- Right: Buy Box, Sensory Bars, Dietary Transparency & Purchase Options -->
-        <div class="pdp-buy-card">
-          <div>
-            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;">
-              <span class="kora-service-pill">${product.line} · Batch #042</span>
-              ${renderHeatBarsHTML(product.heat, product.heatMax)}
-            </div>
-
-            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
-              <h1 style="font-family:var(--font-display); font-size:clamp(2rem, 3.4vw, 2.85rem); font-weight:600; letter-spacing:-0.035em;">
-                ULEK ${product.name}
-              </h1>
-              <span class="tabular-nums" style="font-family:var(--font-display); font-size:1.75rem; font-weight:700;">
-                ${product.priceFormatted}
-              </span>
-            </div>
-
-            <p style="font-family:var(--font-mono); font-size:0.78rem; color:var(--kora-muted); margin-top:4px;">
-              Origin: <strong style="color:var(--kora-ink);">${product.regionDetail}</strong> · Best Served: <strong style="color:var(--kora-ink);">${product.canonicalPairing}</strong>
-            </p>
-
-            <p style="font-size:0.94rem; color:var(--kora-body); margin-top:12px; line-height:1.56;">
-              ${product.tastingNotes}
-            </p>
-          </div>
-
-          <!-- 4 Sensory Calibration Bars -->
-          <div class="pdp-sensory-grid" aria-label="Sensory Calibration Profile">
-            <div class="pdp-sensory-item">
-              <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:600;">
-                <span>Heat Intensity (${product.heatTag})</span>
-                <span class="tabular-nums">${product.sensory.heatIntensity}%</span>
-              </div>
-              <div class="pdp-sensory-track">
-                <div class="pdp-sensory-fill" style="width:${product.sensory.heatIntensity}%; background:var(--kora-chili-bright);"></div>
-              </div>
-            </div>
-
-            <div class="pdp-sensory-item">
-              <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:600;">
-                <span>Aromatic Freshness</span>
-                <span class="tabular-nums">${product.sensory.aromaticFreshness}%</span>
-              </div>
-              <div class="pdp-sensory-track">
-                <div class="pdp-sensory-fill" style="width:${product.sensory.aromaticFreshness}%;"></div>
-              </div>
-            </div>
-
-            <div class="pdp-sensory-item">
-              <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:600;">
-                <span>Savory Umami Depth</span>
-                <span class="tabular-nums">${product.sensory.savoryUmami}%</span>
-              </div>
-              <div class="pdp-sensory-track">
-                <div class="pdp-sensory-fill" style="width:${product.sensory.savoryUmami}%;"></div>
-              </div>
-            </div>
-
-            <div class="pdp-sensory-item">
-              <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:600;">
-                <span>Cobek Coarseness</span>
-                <span class="tabular-nums">${product.sensory.grindCoarseness}%</span>
-              </div>
-              <div class="pdp-sensory-track">
-                <div class="pdp-sensory-fill" style="width:${product.sensory.grindCoarseness}%;"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dietary & Food Gifting Transparency Callout -->
-          <div class="pdp-dietary-transparency-box">
-            <div style="font-family:var(--font-display); font-size:0.82rem; font-weight:700; margin-bottom:4px;">
-              ✓ ${product.dietary.badge}
-            </div>
-            <p style="font-size:0.8rem; color:var(--kora-body); line-height:1.45;">
-              ${product.dietary.giftSafeNote}
-            </p>
-          </div>
-
-          <!-- 3 Purchase Formats -->
-          <div class="pdp-purchase-options" role="radiogroup" aria-label="Select Purchase Format">
-            <button
-              type="button"
-              class="pdp-purchase-radio-card ${state.pdpPurchaseMode === "single" ? "is-selected" : ""}"
-              data-pdp-mode="single"
-            >
-              <div>
-                <div style="font-family:var(--font-display); font-weight:600; font-size:0.9rem;">
-                  Single Jar (${product.jarSize})
-                </div>
-                <div style="font-size:0.76rem; color:var(--kora-muted);">
-                  Standard pantry jar with embossed regional label
-                </div>
-              </div>
-              <strong class="tabular-nums">${product.priceFormatted}</strong>
-            </button>
-
-            <button
-              type="button"
-              class="pdp-purchase-radio-card ${state.pdpPurchaseMode === "trio" ? "is-selected" : ""}"
-              data-pdp-mode="trio"
-            >
-              <div>
-                <div style="font-family:var(--font-display); font-weight:600; font-size:0.9rem;">
-                  Pantry Stock-Up Trio (3 × ${product.name})
-                </div>
-                <div style="font-size:0.76rem; color:var(--kora-muted);">
-                  Save 8% for daily dining tables &amp; dinner hosts
-                </div>
-              </div>
-              <strong class="tabular-nums">${formatRupiah(Math.round(product.price * 3 * 0.92))}</strong>
-            </button>
-
-            <button
-              type="button"
-              class="pdp-purchase-radio-card ${state.pdpPurchaseMode === "giftbox" ? "is-selected" : ""}"
-              data-pdp-mode="giftbox"
-            >
-              <div>
-                <div style="font-family:var(--font-display); font-weight:600; font-size:0.9rem;">
-                  4-Jar Archipelago Linen Gift Box (Matah, Roa, Bajak, Andaliman)
-                </div>
-                <div style="font-size:0.76rem; color:var(--kora-muted);">
-                  Includes printed Dietary &amp; Pairing Guide Card · Save Rp20.000
-                </div>
-              </div>
-              <strong class="tabular-nums">Rp380.000</strong>
-            </button>
-          </div>
-
-          <!-- Quantity + Primary Add to Bag Button -->
-          <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-            <div class="qty-control-pill" style="padding:10px 16px; font-size:0.9rem;">
-              <button type="button" id="pdp-qty-minus" aria-label="Decrease quantity">−</button>
-              <span id="pdp-qty-val" class="tabular-nums" style="min-width:24px; text-align:center; font-weight:700;">${state.pdpQty}</span>
-              <button type="button" id="pdp-qty-plus" aria-label="Increase quantity">+</button>
-            </div>
-
-            <button type="button" id="pdp-primary-add-btn" class="kora-btn-green" style="flex:1; justify-content:center; padding-block:15px; font-size:0.96rem;">
-              <span>Add to Pantry Bag · ${formatRupiah(totalPrice)}</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- PDP Bottom Grid: Extended Dish Pairings + Full 5-Jar Comparison Matrix -->
-      <div class="pdp-bottom-grid">
-        <div class="kora-compare-card kora-compare-card--after">
-          <div>
-            <span class="kora-compare-pill">Canonical &amp; Extended Table Pairings</span>
-            <h3 style="font-family:var(--font-display); font-size:1.45rem; font-weight:600; margin-top:12px;">
-              Best served ${product.canonicalPairing.toLowerCase()}
-            </h3>
-            <p style="font-size:0.88rem; color:var(--kora-body); margin-top:8px;">
-              ${product.why100k}
-            </p>
-          </div>
-
-          <ul class="kora-compare-list">
-            ${product.extendedPairings
-              .map(
-                (dish) => `
-              <li class="kora-compare-item">
-                <span class="kora-check-icon kora-check-icon--positive">✓</span>
-                <span>${dish}</span>
-              </li>
-            `
-              )
-              .join("")}
-          </ul>
-        </div>
-
-        <div class="kora-compare-card kora-compare-card--after" style="overflow-x:auto;">
-          <div>
-            <span class="kora-compare-pill" style="background:var(--kora-charcoal); color:#FFFFFA;">
-              Complete ULEK Lineup Matrix (Click Any Row to Switch)
-            </span>
-            <h3 style="font-family:var(--font-display); font-size:1.35rem; font-weight:600; margin-top:12px;">
-              Compare all 4 Reserve Jars (Rp100k) &amp; 1987 Original (Rp25k)
-            </h3>
-          </div>
-
-          <table class="pdp-compare-table">
-            <thead>
-              <tr>
-                <th>Jar</th>
-                <th>Origin</th>
-                <th>Heat</th>
-                <th>Canonical Pairing</th>
-                <th>Dietary</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${DATA.products
-                .map(
-                  (p) => `
-                <tr class="pdp-compare-row ${p.id === product.id ? "is-current" : ""}" data-pdp-switch="${p.id}">
-                  <td><strong>${p.name}</strong></td>
-                  <td>${p.origin}</td>
-                  <td class="tabular-nums">${p.heat}/${p.heatMax}</td>
-                  <td>${p.canonicalPairing}</td>
-                  <td>${p.dietary.isPlantBased ? "100% Plant Based" : "Seafood / Terasi"}</td>
-                  <td class="tabular-nums"><strong>${p.priceFormatted}</strong></td>
-                </tr>
-              `
-                )
-                .join("")}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    `;
-
-    // Bind PDP events
-    const backBtn = document.getElementById("pdp-back-home-btn");
-    if (backBtn) {
-      backBtn.addEventListener("click", () => closePdpViewAndReturnHome());
-    }
-
-    container.querySelectorAll("[data-pdp-switch]").forEach((el) => {
-      el.addEventListener("click", () => {
-        state.pdpProductId = el.getAttribute("data-pdp-switch");
-        state.pdpMediaTab = "jar";
-        renderPdpView();
-      });
-    });
-
-    container.querySelectorAll("[data-pdp-media]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        state.pdpMediaTab = btn.getAttribute("data-pdp-media");
-        renderPdpView();
-      });
-    });
-
-    container.querySelectorAll("[data-pdp-mode]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        state.pdpPurchaseMode = btn.getAttribute("data-pdp-mode");
-        renderPdpView();
-      });
-    });
-
-    const minusBtn = document.getElementById("pdp-qty-minus");
-    const plusBtn = document.getElementById("pdp-qty-plus");
-    if (minusBtn) {
-      minusBtn.addEventListener("click", () => {
-        state.pdpQty = Math.max(1, state.pdpQty - 1);
-        renderPdpView();
-      });
-    }
-    if (plusBtn) {
-      plusBtn.addEventListener("click", () => {
-        state.pdpQty += 1;
-        renderPdpView();
-      });
-    }
-
-    const addBtn = document.getElementById("pdp-primary-add-btn");
-    if (addBtn) {
-      addBtn.addEventListener("click", () => {
-        if (state.pdpPurchaseMode === "single") {
-          addProductToCart(product.id, state.pdpQty, addBtn);
-        } else if (state.pdpPurchaseMode === "trio") {
-          addCustomItemToCart({
-            id: `${product.id}-trio`,
-            title: `ULEK ${product.name} Pantry Trio (3 Jars)`,
-            subtitle: `3 × ${product.jarSize} · Save 8%`,
-            price: Math.round(product.price * 3 * 0.92),
-            qty: state.pdpQty,
-            image: product.image
-          }, addBtn);
-        } else {
-          addCustomItemToCart({
-            id: "gift-box-matah-roa-bajak-andaliman",
-            title: "4 Jar Archipelago Linen Gift Box",
-            subtitle: "Matah, Roa, Bajak, Andaliman · + Dietary Guide Card",
-            price: DATA.brand.giftBoxPrice,
-            qty: state.pdpQty,
-            image: "./assets/kora-pantry-table.png"
-          }, addBtn);
-        }
-      });
-    }
-  }
 
   /* ==========================================================================
      11a. Flying Pantry Bag Animation (Parabolic Arc Flight to Top-Right Dock)

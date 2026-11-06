@@ -563,14 +563,12 @@ a.kora-btn-dark .kora-dot,
   padding: 0;
 }
 
-.page-shell > .homepage-view-container > .kora-section,
-.page-shell > .pdp-view-container {
+.page-shell > .homepage-view-container > .kora-section {
   padding-inline: 24px;
 }
 
 @media (max-width: 768px) {
-  .page-shell > .homepage-view-container > .kora-section,
-  .page-shell > .pdp-view-container {
+  .page-shell > .homepage-view-container > .kora-section {
     padding-inline: 16px;
   }
 }
