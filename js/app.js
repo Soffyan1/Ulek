@@ -113,14 +113,15 @@
     const heatEl = document.getElementById("hero-spotlight-heat");
     const statSubEl = document.getElementById("hero-spotlight-stat-sub");
     const bagBtn = document.getElementById("hero-spotlight-bag-btn");
-    const pdpBtn = document.getElementById("hero-spotlight-pdp-btn");
 
     if (!imgEl || !dotsContainer) return;
 
     imgEl.src = product.image;
     imgEl.alt = `ULEK ${product.name} (${product.origin}) Reserve Jar`;
     originEl.textContent = `ulek™ · ${product.origin}`;
-    badgeEl.textContent = `Reserve ${product.serial} · ${product.priceFormatted}`;
+    if (badgeEl) {
+      badgeEl.textContent = `Reserve ${product.serial} · ${product.priceFormatted}`;
+    }
     headlineEl.textContent = `${product.name} (${product.origin}) ${product.koraHeading}`;
     heatEl.textContent = `${product.heat}/${product.heatMax}`;
     statSubEl.innerHTML = `Heat Index<br>${product.canonicalPairing}`;
